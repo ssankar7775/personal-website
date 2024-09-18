@@ -15,20 +15,21 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#about">About Me</a></li> <!-- Internal link -->
+                    <li><a href="#portfolio">Portfolio</a></li> <!-- Internal link -->
+                    <li><a href="#contact">Contact</a></li> <!-- Internal link -->
                 </ul>
             </nav>
         </div>     
     </header>
     
-
+    <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I’m [Your Name], a passionate [Your Profession] with experience in [mention your skills or industries]. I’m excited about [specific interests or goals].</p>
+        <p>Hello! I’m Tosh Sankar, a passionate Aerospace Engineer with experience in spacecraft design, 3D printing, and mechanical systems. I’m excited about working on advanced space systems and making space more accessible through cutting-edge engineering.</p>
     </section>
 
+    <!-- Thumbnails for Portfolio and Resume -->
     <section id="thumbnails">
         <h2>Explore My Work</h2>
         <div class="thumbnail-container">
@@ -46,24 +47,26 @@
         </div>
     </section>    
 
+    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2>Portfolio</h2>
         <ul>
             <li>
-                <h3>Project 1</h3>
-                <p>Description of your first project. Include links, images, or any relevant details.</p>
+                <h3>Project 1: LoRa Communication System</h3>
+                <p>Developed a reliable LoRa-based communication system for low-cost satellite telemetry. Utilized SX1272 LoRa module for long-range, low-power data transmission.</p>
             </li>
             <li>
-                <h3>Project 2</h3>
-                <p>Description of your second project.</p>
+                <h3>Project 2: 3D-Printed Rocket Engine Components</h3>
+                <p>Designed and tested 3D-printed rocket engine parts to optimize performance and reduce costs for small satellite launch systems.</p>
             </li>
             <li>
-                <h3>Project 3</h3>
-                <p>Description of your third project.</p>
+                <h3>Project 3: Attitude Control System Design</h3>
+                <p>Engineered an ADCS system using reaction wheels and Kalman filters to stabilize and control a CubeSat's orientation in orbit.</p>
             </li>
         </ul>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
         <form action="https://formspree.io/f/xblrevnr" method="POST">
@@ -80,6 +83,7 @@
         </form>
     </section>
 
+    <!-- Smooth Scrolling Script -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
