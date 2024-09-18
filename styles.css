@@ -13,13 +13,12 @@ header {
     position: relative;
 }
 
-/* Navigation Bar styles */
+/* Updated Navigation Bar styles */
 nav {
     background-color: #444;
     text-align: center;
     padding: 10px 0;
     border-top: 2px solid #333;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
@@ -41,15 +40,19 @@ nav ul li a {
     font-weight: bold;
     background-color: #555; /* Button background color */
     padding: 10px 20px;
-    border-radius: 8px; /* Rounded corners for the buttons */
-    transition: background-color 0.3s ease;
+    border-radius: 20px; /* Rounded corners for the buttons */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Removes any default border */
+    box-shadow: none; /* Removes light box around buttons */
 }
 
 nav ul li a:hover {
     background-color: #0066cc; /* Hover color change */
     color: #fff;
     text-decoration: none; /* Removes underline on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow when hovering */
 }
+
 
 /* Section styling */
 section {
