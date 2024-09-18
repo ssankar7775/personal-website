@@ -12,6 +12,7 @@ header {
     height: 300px; /* Matches slideshow height */
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Hide overflow */
 }
 
 /* Slideshow container with images filling the header */
@@ -21,12 +22,10 @@ header {
     left: 0;
     width: 100%;
     height: 100%; /* Fills the entire header space */
-    background-size: cover;
-    background-position: center;
-    animation: slideshow 15s infinite; /* Smooth transitions between images */
+    overflow: hidden; /* Hide overflowing images */
 }
 
-/* Keyframes for image transitions without squeezing or stretching */
+/* Keyframes for image transitions */
 @keyframes slideshow {
     0% { background-image: url('src/images/image1.jpeg'); }
     33% { background-image: url('src/images/image2.jpeg'); }
@@ -34,14 +33,16 @@ header {
     100% { background-image: url('src/images/image1.jpeg'); } /* Loop back to the start */
 }
 
-/* Header content - text and nav sit above slideshow */
-header h1, nav {
-    position: relative;
-    z-index: 2; /* Places above the images */
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-    margin: 0;
+/* Slideshow animation */
+.slideshow-container {
+    animation: slideshow 15s infinite; /* Smooth transitions between images */
+}
+
+/* Slideshow images */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
 /* Translucent overlay for a soft mist over the slideshow */
@@ -55,14 +56,29 @@ header h1, nav {
     z-index: 1;
 }
 
+/* Header content - text and nav sit above slideshow */
+header h1 {
+    position: absolute;
+    z-index: 2; /* Ensures the text is above the slideshow */
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0;
+    font-size: 36px;
+    top: 50px; /* Adjust the spacing as needed */
+    width: 100%; /* Ensure the title spans the width of the header */
+}
+
 /* Translucent navigation bar */
 nav {
-    background-color: rgba(0, 0, 0, 0.5); /* Thin dark glass effect */
+    position: absolute;
+    bottom: 0; /* Keeps it at the bottom of the header */
+    width: 100%; /* Full width */
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
     text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Faint shadow for depth */
-    position: relative;
+    padding: 10px 0; /* Reduces the height */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Depth effect */
+    height: auto; /* Removes fixed height */
 }
 
 /* Navigation links styled like floating buttons */
@@ -77,19 +93,19 @@ nav ul li {
     margin: 0 15px;
 }
 
+/* Adjust the size of the nav links (buttons) */
 nav ul li a {
-    display: inline-block;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    padding: 10px 20px;
-    background-color: rgba(90, 90, 90, 0.8); /* Smoky grey background */
+    padding: 5px 15px; /* Reduce padding inside the links */
+    background-color: rgba(90, 90, 90, 0.8); /* Adjust the background color */
     border-radius: 20px;
-    transition: background-color 0.3s, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: rgba(0, 102, 204, 0.8); /* Bold hover effect with cool blue */
+    background-color: rgba(0, 102, 204, 0.8); /* Blue hover effect */
 }
 
 /* Section styling */
@@ -220,145 +236,65 @@ button:hover {
     font-weight: bold;
     color: #0066cc;
 }
-
-/* Slideshow container styling */
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Adjust the height as needed */
-    overflow: hidden; /* Hide overflowing images */
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 100%; /* Start each slide off-screen to the right */
-    transition: left 1s ease-in-out;
-}
-
-.slideshow-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure images cover the container without stretching */
-}
-
-/* Slideshow animation */
-@keyframes slide {
-    0% { left: 100%; }
-    10% { left: 0; } /* Slide into view */
-    30% { left: 0; } /* Hold the image for a bit */
-    40% { left: -100%; } /* Slide out of view */
-    100% { left: -100%; } /* Move completely off-screen */
-}
-
-.slideshow-container .slide:nth-child(1) {
-    animation: slide 12s infinite;
-}
-
-.slideshow-container .slide:nth-child(2) {
-    animation: slide 12s infinite 4s; /* Delay this slide */
-}
-
-.slideshow-container .slide:nth-child(3) {
-    animation: slide 12s infinite 8s; /* Delay this slide even more */
-}
-
-/* Slideshow container styling */
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Adjust the height as needed */
-    overflow: hidden; /* Hide overflowing images */
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 100%; /* Start each slide off-screen to the right */
-    transition: left 1s ease-in-out;
-}
-
-.slideshow-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure images cover the container without stretching */
-}
-
-/* Slideshow animation */
-@keyframes slide {
-    0% { left: 100%; }
-    10% { left: 0; } /* Slide into view */
-    30% { left: 0; } /* Hold the image for a bit */
-    40% { left: -100%; } /* Slide out of view */
-    100% { left: -100%; } /* Move completely off-screen */
-}
-
-.slideshow-container .slide:nth-child(1) {
-    animation: slide 12s infinite;
-}
-
-.slideshow-container .slide:nth-child(2) {
-    animation: slide 12s infinite 4s; /* Delay this slide */
-}
-
-.slideshow-container .slide:nth-child(3) {
-    animation: slide 12s infinite 8s; /* Delay this slide even more */
-}
-
-/* Translucent overlay */
+/* Adjust z-index for the overlay */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* White translucent filter */
-    z-index: 1; /* Places it above the slideshow but below the text */
+    background-color: rgba(255, 255, 255, 0.5); /* Gentle white veil */
+    z-index: 1; /* Overlay below header content */
 }
 
-/* Header content styling */
-header h1, nav {
-    position: absolute;
-    z-index: 2; /* Ensures text is above the overlay */
-    color: white;
-    text-align: center;
-    width: 100%; /* Ensures the text spans the width of the header */
-}
-
-header h1 {
-    top: 50px; /* Moves the title down slightly */
-    font-size: 36px; /* Adjust font size as needed */
-}
-
+/* Ensure navigation is above the overlay */
 nav {
-    top: 150px; /* Moves the navigation bar down */
+    position: absolute;
+    bottom: 0; /* Keeps it at the bottom of the header */
+    width: 100%; /* Full width */
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+    text-align: center;
+    padding: 10px 0; /* Reduces the height */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Depth effect */
+    height: auto; /* Removes fixed height */
+    z-index: 2; /* Ensures the navigation is above the overlay */
+}
+/* Section styling */
+section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle depth */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* About Me section styling */
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .about-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+#about .about-text p {
     margin: 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+#about .headshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Light translucent background for the navigation */
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(0, 102, 204, 0.3); /* Light translucent hover effect */
+#about .headshot img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Keep it square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fits well */
 }
