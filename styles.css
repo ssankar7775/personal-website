@@ -298,6 +298,7 @@ section {
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensure the image fits well */
 }
+
 .about-container img {
     width: 100%; /* Ensures it takes up the available width */
     height: auto; /* Maintains aspect ratio */
