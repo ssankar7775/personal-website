@@ -121,3 +121,41 @@ button {
 button:hover {
     background-color: #555;
 }
+
+/* Thumbnail Section */
+#thumbnails {
+    text-align: center;
+    padding: 20px;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.thumbnail {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail p {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
