@@ -10,7 +10,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    position: relative; /* For consistent layout control */
+    position: relative;
 }
 
 /* Navigation Bar styles */
@@ -18,9 +18,9 @@ nav {
     background-color: #444;
     text-align: center;
     padding: 10px 0;
-    border-top: 2px solid #333; /* Separation from header */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
-    width: 100%; /* Full width for consistency */
+    border-top: 2px solid #333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 nav ul {
@@ -30,24 +30,28 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block; /* Better control over spacing and layout */
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
+    display: inline-block; /* Makes the links behave like buttons */
     text-decoration: none;
-    color: white; /* Ensures readability on the dark background */
+    color: white;
     font-weight: bold;
+    background-color: #555; /* Button background color */
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px; /* Rounded corners for the buttons */
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    color: #fff; /* Keeps text white on hover for clarity */
+    background-color: #0066cc; /* Hover color change */
+    color: #fff;
+    text-decoration: none; /* Removes underline on hover */
 }
 
+/* Section styling */
 section {
     padding: 20px;
     margin: 20px 0;
@@ -78,6 +82,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
