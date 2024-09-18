@@ -20,6 +20,10 @@ nav {
     padding: 10px 0;
     border-top: 2px solid #333;
     width: 100%;
+    border-radius: 20px; /* Rounded corners for the background box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow around the background */
+    margin: 0 auto; /* Center the nav bar if it's in a container */
+    display: inline-block; /* Shrinks the nav bar to fit the content */
 }
 
 nav ul {
