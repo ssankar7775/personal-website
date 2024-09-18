@@ -220,3 +220,145 @@ button:hover {
     font-weight: bold;
     color: #0066cc;
 }
+
+/* Slideshow container styling */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%; /* Start each slide off-screen to the right */
+    transition: left 1s ease-in-out;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container without stretching */
+}
+
+/* Slideshow animation */
+@keyframes slide {
+    0% { left: 100%; }
+    10% { left: 0; } /* Slide into view */
+    30% { left: 0; } /* Hold the image for a bit */
+    40% { left: -100%; } /* Slide out of view */
+    100% { left: -100%; } /* Move completely off-screen */
+}
+
+.slideshow-container .slide:nth-child(1) {
+    animation: slide 12s infinite;
+}
+
+.slideshow-container .slide:nth-child(2) {
+    animation: slide 12s infinite 4s; /* Delay this slide */
+}
+
+.slideshow-container .slide:nth-child(3) {
+    animation: slide 12s infinite 8s; /* Delay this slide even more */
+}
+
+/* Slideshow container styling */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%; /* Start each slide off-screen to the right */
+    transition: left 1s ease-in-out;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container without stretching */
+}
+
+/* Slideshow animation */
+@keyframes slide {
+    0% { left: 100%; }
+    10% { left: 0; } /* Slide into view */
+    30% { left: 0; } /* Hold the image for a bit */
+    40% { left: -100%; } /* Slide out of view */
+    100% { left: -100%; } /* Move completely off-screen */
+}
+
+.slideshow-container .slide:nth-child(1) {
+    animation: slide 12s infinite;
+}
+
+.slideshow-container .slide:nth-child(2) {
+    animation: slide 12s infinite 4s; /* Delay this slide */
+}
+
+.slideshow-container .slide:nth-child(3) {
+    animation: slide 12s infinite 8s; /* Delay this slide even more */
+}
+
+/* Translucent overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* White translucent filter */
+    z-index: 1; /* Places it above the slideshow but below the text */
+}
+
+/* Header content styling */
+header h1, nav {
+    position: absolute;
+    z-index: 2; /* Ensures text is above the overlay */
+    color: white;
+    text-align: center;
+    width: 100%; /* Ensures the text spans the width of the header */
+}
+
+header h1 {
+    top: 50px; /* Moves the title down slightly */
+    font-size: 36px; /* Adjust font size as needed */
+}
+
+nav {
+    top: 150px; /* Moves the navigation bar down */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Light translucent background for the navigation */
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 102, 204, 0.3); /* Light translucent hover effect */
+}
