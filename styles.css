@@ -4,18 +4,53 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative; /* For consistent layout control */
 }
+
+/* Navigation Bar styles */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #333; /* Separation from header */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+    width: 100%; /* Full width for consistency */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Better control over spacing and layout */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Ensures readability on the dark background */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #fff; /* Keeps text white on hover for clarity */
+}
+
 section {
     padding: 20px;
-}
-section {
     margin: 20px 0;
-    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -73,28 +108,4 @@ button {
 
 button:hover {
     background-color: #555;
-}
-nav {
-    text-align: center;
-    margin: 20px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #00ffff;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #0066cc;
 }
