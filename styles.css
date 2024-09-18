@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -5,27 +6,66 @@ body {
     padding: 0;
 }
 
+/* Header that wraps everything */
 header {
-    background-color: #333;
+    position: relative;
+    height: 300px; /* Matches slideshow height */
+    margin: 0;
+    padding: 0;
+}
+
+/* Slideshow container with images filling the header */
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fills the entire header space */
+    background-size: cover;
+    background-position: center;
+    animation: slideshow 15s infinite; /* Smooth transitions between images */
+}
+
+/* Keyframes for image transitions without squeezing or stretching */
+@keyframes slideshow {
+    0% { background-image: url('src/images/image1.jpeg'); }
+    33% { background-image: url('src/images/image2.jpeg'); }
+    66% { background-image: url('src/images/image3.jpeg'); }
+    100% { background-image: url('src/images/image1.jpeg'); } /* Loop back to the start */
+}
+
+/* Header content - text and nav sit above slideshow */
+header h1, nav {
+    position: relative;
+    z-index: 2; /* Places above the images */
     color: white;
-    padding: 20px;
     text-align: center;
+    padding-top: 50px;
+    margin: 0;
+}
+
+/* Translucent overlay for a soft mist over the slideshow */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Gentle white veil */
+    z-index: 1;
+}
+
+/* Translucent navigation bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.5); /* Thin dark glass effect */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Faint shadow for depth */
     position: relative;
 }
 
-/* Updated Navigation Bar styles */
-nav {
-    background-color: #444;
-    text-align: center;
-    padding: 10px 0;
-    border-top: 2px solid #333;
-    width: 100%;
-    border-radius: 20px; /* Rounded corners for the background box */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow around the background */
-    margin: 0 auto; /* Center the nav bar if it's in a container */
-    display: inline-block; /* Shrinks the nav bar to fit the content */
-}
-
+/* Navigation links styled like floating buttons */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -38,25 +78,19 @@ nav ul li {
 }
 
 nav ul li a {
-    display: inline-block; /* Makes the links behave like buttons */
+    display: inline-block;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #5a5a5a; /* Button background color */
     padding: 10px 20px;
-    border-radius: 20px; /* Rounded corners for the buttons */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    border: none; /* Removes any default border */
-    box-shadow: none; /* Removes light box around buttons */
+    background-color: rgba(90, 90, 90, 0.8); /* Smoky grey background */
+    border-radius: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #0066cc; /* Hover color change */
-    color: #fff;
-    text-decoration: none; /* Removes underline on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow when hovering */
+    background-color: rgba(0, 102, 204, 0.8); /* Bold hover effect with cool blue */
 }
-
 
 /* Section styling */
 section {
@@ -64,7 +98,7 @@ section {
     margin: 20px 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle depth */
 }
 
 h2 {
@@ -80,6 +114,7 @@ ul li {
     margin-bottom: 10px;
 }
 
+/* Links */
 a {
     color: #0066cc;
     text-decoration: none;
@@ -122,12 +157,7 @@ button:hover {
     background-color: #555;
 }
 
-/* Thumbnail Section */
-#thumbnails {
-    text-align: center;
-    padding: 20px;
-}
-
+/* Thumbnail hover effect */
 .thumbnail-container {
     display: flex;
     justify-content: center;
@@ -157,10 +187,10 @@ button:hover {
 
 .thumbnail:hover {
     transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
-
+/* Download section */
 #downloads {
     text-align: center;
     margin: 50px 0;
@@ -170,11 +200,6 @@ button:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-}
-
-.thumbnails a {
-    text-decoration: none;
-    color: #333;
 }
 
 .thumbnails img {
@@ -195,58 +220,3 @@ button:hover {
     font-weight: bold;
     color: #0066cc;
 }
-/* Slideshow container styling */
-.slideshow-container {
-    position: relative;
-    height: 300px; /* Adjust height as needed */
-    background-size: cover; /* Ensures the image scales properly */
-    background-position: center;
-    animation: slideshow 15s infinite; /* 15s slideshow without stretching */
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Remove padding */
-}
-
-/* Background images without stretch */
-@keyframes slideshow {
-    0% { background-image: url('src/images/image1.jpeg'); }
-    33% { background-image: url('src/images/image2.jpeg'); }
-    66% { background-image: url('src/images/image3.jpeg'); }
-    100% { background-image: url('src/images/image1.jpeg'); } /* Loops back */
-}
-
-/* Translucent overlay */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
-    z-index: 1;
-}
-
-/* Header content styling */
-header h1, nav {
-    position: relative;
-    z-index: 2; /* Ensures text is above overlay */
-    color: white; 
-    text-align: center;
-    padding-top: 50px;
-    margin: 0; /* Removes the dark border */
-}
-
-/* Translucent navigation bar */
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Light translucent background */
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(0, 102, 204, 0.3); /* Light translucent hover effect */
-}
-
