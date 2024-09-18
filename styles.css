@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Updated Navigation Bar styles */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #333;
+    width: 100%;
+    border-radius: 20px; /* Rounded corners for the background box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow around the background */
+    margin: 0 auto; /* Center the nav bar if it's in a container */
+    display: inline-block; /* Shrinks the nav bar to fit the content */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: inline-block; /* Makes the links behave like buttons */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #5a5a5a; /* Button background color */
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the buttons */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Removes any default border */
+    box-shadow: none; /* Removes light box around buttons */
+}
+
+nav ul li a:hover {
+    background-color: #0066cc; /* Hover color change */
+    color: #fff;
+    text-decoration: none; /* Removes underline on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow when hovering */
+}
+
+
+/* Section styling */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Thumbnail Section */
+#thumbnails {
+    text-align: center;
+    padding: 20px;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.thumbnail {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail p {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

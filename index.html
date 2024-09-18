@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Tosh's Professional Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>     
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I’m [Your Name], a passionate [Your Profession] with experience in [mention your skills or industries]. I’m excited about [specific interests or goals].</p>
+    </section>
+
+    <section id="thumbnails">
+        <h2>Explore My Work</h2>
+        <div class="thumbnail-container">
+            <a href="portfolio.html" class="thumbnail">
+                <img src="portfolio-thumbnail.jpg" alt="Portfolio Thumbnail">
+                <p>View My Portfolio</p>
+            </a>
+            <a href="resume.pdf" class="thumbnail" download>
+                <img src="resume-thumbnail.jpg" alt="Resume Thumbnail">
+                <p>Download My Resume</p>
+            </a>
+        </div>
+    </section>
+    
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <ul>
+            <li>
+                <h3>Project 1</h3>
+                <p>Description of your first project. Include links, images, or any relevant details.</p>
+            </li>
+            <li>
+                <h3>Project 2</h3>
+                <p>Description of your second project.</p>
+            </li>
+            <li>
+                <h3>Project 3</h3>
+                <p>Description of your third project.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xblrevnr" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
