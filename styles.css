@@ -38,7 +38,7 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #555; /* Button background color */
+    background-color: #e60a0a; /* Button background color */
     padding: 10px 20px;
     border-radius: 20px; /* Rounded corners for the buttons */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
