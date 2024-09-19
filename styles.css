@@ -15,35 +15,45 @@ header {
     overflow: hidden; /* Hide overflow */
 }
 
-/* Slideshow container with images filling the header */
+/* Slideshow container */
 .slideshow-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%; /* Fills the entire header space */
+    height: 100%;
     overflow: hidden; /* Hide overflowing images */
 }
 
-/* Keyframes for image transitions */
-@keyframes slideshow {
-    0% { background-image: url('src/images/image1.jpeg'); }
-    33% { background-image: url('src/images/image2.jpeg'); }
-    66% { background-image: url('src/images/image3.jpeg'); }
-    100% { background-image: url('src/images/image1.jpeg'); } /* Loop back to the start */
+/* Slide wrapper for sliding effect */
+.slides-wrapper {
+    display: flex;
+    width: 600%; /* 100% for each slide */
+    height: 100%;
+    animation: slide 80s infinite; /* Duration of slideshow */
 }
 
-/* Slideshow animation */
-.slideshow-container {
-    animation: slideshow 15s infinite; /* Smooth transitions between images */
+/* Each slide */
+.slide {
+    flex: 1 0 100%; /* Each slide takes up 100% width */
+    height: 100%;
 }
 
-/* Slideshow images */
+/* Keyframes for sliding effect */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }
+    100% { transform: translateX(-500%); }
+}
+
+/* Slide images */
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
+
 
 /* Translucent overlay for a soft mist over the slideshow */
 .overlay {
