@@ -59,15 +59,22 @@ header {
 /* Header content - text and nav sit above slideshow */
 header h1 {
     position: absolute;
-    z-index: 2; /* Ensures the text is above the slideshow */
+    z-index: 2;
     color: white;
     text-align: center;
     padding-top: 50px;
     margin: 0;
     font-size: 36px;
-    top: 50px; /* Adjust the spacing as needed */
-    width: 100%; /* Ensure the title spans the width of the header */
+    top: 50px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
+
 
 /* Translucent navigation bar */
 nav {
