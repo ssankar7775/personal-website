@@ -6,32 +6,32 @@ body {
     padding: 0;
 }
 
-/* Header */
+/* Header styling */
 header {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust as needed */
-    overflow: hidden; /* Keeps content within header */
-    background: url(src/images/image1.jpg) no-repeat center center; /* Single background image */
-    background-size: cover; /* Cover the header area */
+    height: 400px;
+    overflow: hidden;
+    background: url(src/images/image1.jpg) no-repeat center center;
+    background-size: cover;
 }
 
-/* Translucent overlay for a soft mist over the header */
+/* Header overlay */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Gentle white veil */
-    z-index: 1; /* Below header content */
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
 }
 
-/* Header content - text and nav above header image */
+/* Header content - title */
 header h1 {
     position: absolute;
     z-index: 2;
-    color: white;
+    color: rgb(136, 96, 37);
     text-align: center;
     padding-top: 50px;
     margin: 0;
@@ -39,29 +39,23 @@ header h1 {
     top: 50px;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
 }
 
-/* Translucent navigation bar */
+/* Navigation bar styling */
 nav {
     position: absolute;
-    bottom: 0; /* At the bottom of the header */
-    width: 100%; /* Full width */
-    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 10px 0; /* Reduced height */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Depth effect */
-    height: auto; /* Auto height */
-    z-index: 2; /* Above the overlay */
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 /* Navigation list */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -76,14 +70,14 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    padding: 5px 15px; /* Padding inside links */
-    background-color: rgba(90, 90, 90, 0.8); /* Background color */
+    padding: 5px 15px;
+    background-color: rgba(90, 90, 90, 0.8);
     border-radius: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: rgba(0, 102, 204, 0.8); /* Blue hover effect */
+    background-color: rgba(0, 102, 204, 0.8);
 }
 
 /* Section styling */
@@ -92,38 +86,112 @@ section {
     margin: 20px 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Flex alignment for sections */
-section {
+/* Heading section for explore */
+#explore-heading {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#explore-heading h2 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+/* Thumbnails section */
+#thumbnails {
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Thumbnail container */
+.thumbnail-container {
     display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Common Thumbnail styling */
+.thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 300px; /* Consistent height */
+}
+
+/* Portfolio Thumbnail - Longer Width */
+.portfolio-thumbnail {
+    max-width: 300px; /* Wider than the resume thumbnail */
+}
+
+/* Resume Thumbnail */
+.resume-thumbnail {
+    max-width: 150px; /* Narrower width */
+}
+
+/* Image inside the thumbnail */
+.thumbnail img {
+    width: 100%;
+    height: 200px; /* Keep consistent height for all images */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and caption */
+}
+
+/* Caption styling */
+.thumbnail p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Adjust color if needed */
+}
+
+/* Hover effect on thumbnails */
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* About Me section styling */
+#about {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Heading styles */
-h2 {
-    color: #333;
+#about .about-text {
+    flex: 1;
+    padding-right: 20px;
 }
 
-/* List styling */
-ul {
-    list-style-type: none;
-    padding: 0;
+#about .about-text p {
+    margin: 0;
 }
 
-ul li {
-    margin-bottom: 10px;
+#about .headshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-/* Links */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+#about .headshot img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Form styling */
@@ -159,84 +227,27 @@ button:hover {
     background-color: #555;
 }
 
-/* Thumbnails section styling */
-#thumbnails {
-    text-align: center; /* Center-align the heading and thumbnails container */
-    margin: 50px 0; /* Space above and below the section */
-    padding: 20px; /* Add padding to the section */
-    box-sizing: border-box; /* Include padding in width/height calculations */
-}
-
-/* Heading styling */
-#thumbnails h2 {
-    margin: 0;
-    padding: 10px 0; /* Space around the heading text */
-    font-size: 2em; /* Adjust font size as needed */
-    font-weight: bold; /* Make the heading bold */
-    background: #fff; /* Ensure the background is white to contrast with the section */
-}
-
-/* Thumbnail container styling */
-.thumbnail-container {
-    display: flex;
-    justify-content: center; /* Center thumbnails horizontally */
-    gap: 20px; /* Space between thumbnails */
-    flex-wrap: wrap; /* Ensure thumbnails wrap if they exceed the width */
-}
-
-/* Thumbnail styling */
-.thumbnail {
-    display: block;
+/* Links */
+a {
+    color: #0066cc;
     text-decoration: none;
-    color: black;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.thumbnail img {
-    display: block;
-    width: 150px; /* Set a fixed width for consistency */
-    height: auto;
+a:hover {
+    text-decoration: underline;
 }
 
-.thumbnail p {
-    margin: 10px;
-    font-weight: bold;
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
 }
 
-.thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+ul li {
+    margin-bottom: 10px;
 }
 
-/* About Me section styling */
-#about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#about .about-text {
-    flex: 1;
-    padding-right: 20px;
-}
-
-#about .about-text p {
-    margin: 0;
-}
-
-#about .headshot {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-#about .headshot img {
-    width: 100%; /* Fill the space flexibly */
-    max-width: 150px; /* Prevent stretching */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Fit properly */
+/* Heading styles */
+h2 {
+    color: #333;
 }
