@@ -82,7 +82,7 @@ header h1 {
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Navigation bar styling */
+/* Navigation bar */
 nav {
     position: absolute;
     bottom: 0;
@@ -96,14 +96,17 @@ nav {
 
 /* Navigation list */
 nav ul {
-    list-style: none;
+    display: flex; /* Flexbox for responsive behavior */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    list-style: none; /* Remove bullets */
     margin: 0;
     padding: 0;
 }
 
+/* Navigation items */
 nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+    margin: 5px 10px; /* Adjust spacing between items */
 }
 
 /* Navigation links */
@@ -115,20 +118,52 @@ nav ul li a {
     background-color: rgba(90, 90, 90, 0.8);
     border-radius: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap; /* Prevent text from breaking */
 }
 
 nav ul li a:hover {
     background-color: rgba(0, 102, 204, 0.8);
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center them */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add more spacing between stacked items */
+    }
+}
+
+
 /* Section styling */
+/* Ensure all sections have consistent spacing */
 section {
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto; /* Center sections on the page */
+    width: calc(100% - 400px); /* Deduct 200px on each side */
+    max-width: 1200px; /* Optional: Limit the maximum width for better readability */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Alternatively, apply a universal container */
+.container {
+    margin: 0 auto; /* Center container */
+    padding: 0 200px; /* 200px padding on left and right */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Text or other inner content */
+section p, section img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+}
+
 
 /* Heading section for explore */
 #explore-heading {
@@ -301,4 +336,15 @@ h2 {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: calc(100% - 40px); /* Smaller margins for mobile */
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
 }
