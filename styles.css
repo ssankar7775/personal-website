@@ -143,7 +143,7 @@ nav ul li a:hover {
 section {
     padding: 20px;
     margin: 20px auto; /* Center sections on the page */
-    width: calc(100% - 400px); /* Deduct 200px on each side */
+    width: 90%; /* Deduct 200px on each side */
     max-width: 1200px; /* Optional: Limit the maximum width for better readability */
     background-color: #fff;
     border-radius: 8px;
@@ -168,7 +168,7 @@ section p, section img {
 /* Heading section for explore */
 #explore-heading {
     text-align: center;
-    margin: 50px 0;
+    margin: 50px auto;
 }
 
 #explore-heading h2 {
@@ -349,15 +349,17 @@ h2 {
     }
 }
 
-/* Portfolio Section */
 #portfolio-download {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 40px 0;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin: 40px auto; /* Center the entire section */
     text-align: center;
+    width: 90%; /* Ensure consistent width across devices */
+    max-width: 1200px; /* Prevent excessive width */
 }
+
 
 #portfolio-download img {
     margin-bottom: 10px; /* Space between the thumbnail and text */
@@ -383,7 +385,7 @@ h2 {
 .project {
     display: flex;
     flex-wrap: wrap;
-    margin: 40px 20px;
+    margin: 40px auto;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
 }
@@ -414,5 +416,13 @@ h2 {
 
     .project-image, .project-content {
         padding: 10px;
+    }
+    section {
+        width: 95%; /* Use more of the screen */
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 10px; /* Minimize side padding */
     }
 }
