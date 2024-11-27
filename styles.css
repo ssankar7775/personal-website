@@ -1,4 +1,4 @@
-/* General Styles */
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,58 +6,58 @@ body {
     padding: 0;
 }
 
-a {
-    color: #0066cc;
-    text-decoration: none;
+/* Home Page Header */
+.header-home {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: url('src/images/home-image.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-a:hover {
-    text-decoration: underline;
+/* About Page Header */
+.header-about {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: url('src/images/image4.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Portfolio Page Header */
+.header-portfolio {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: url('src/images/image3.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-ul li {
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #333;
-}
-
-/* Headers */
-header,
-.header-home,
-.header-about,
-.header-portfolio,
+/* Contact Page Header */
 .header-contact {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
+    background: url('src/images/image2.JPG') no-repeat center center;
     background-size: cover;
-    background-position: center;
 }
 
-.header-home {
-    background: url('src/images/home-image.jpg') no-repeat center;
+
+/* Header styling */
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: url(src/images/image1.jpg) no-repeat center center;
+    background-size: cover;
 }
 
-.header-about {
-    background: url('src/images/image4.jpg') no-repeat center;
-}
-
-.header-portfolio {
-    background: url('src/images/image3.jpg') no-repeat center;
-}
-
-.header-contact {
-    background: url('src/images/image2.JPG') no-repeat center;
-}
-
+/* Header overlay */
 .overlay {
     position: absolute;
     top: 0;
@@ -68,20 +68,21 @@ header,
     z-index: 1;
 }
 
+/* Header content - title */
 header h1 {
     position: absolute;
     z-index: 2;
     color: rgb(136, 96, 37);
     text-align: center;
+    padding-top: 50px;
+    margin: 0;
     font-size: 36px;
     top: 50px;
     width: 100%;
-    margin: 0;
-    padding: 50px 0 0 0;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Navigation Bar */
+/* Navigation bar */
 nav {
     position: absolute;
     bottom: 0;
@@ -93,18 +94,22 @@ nav {
     z-index: 2;
 }
 
+/* Navigation list */
 nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox for responsive behavior */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    list-style: none; /* Remove bullets */
     margin: 0;
     padding: 0;
 }
 
+/* Navigation items */
 nav ul li {
-    margin: 5px 10px;
+    margin: 5px 10px; /* Adjust spacing between items */
 }
 
+/* Navigation links */
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -113,37 +118,54 @@ nav ul li a {
     background-color: rgba(90, 90, 90, 0.8);
     border-radius: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent text from breaking */
 }
 
 nav ul li a:hover {
     background-color: rgba(0, 102, 204, 0.8);
 }
 
-/* Sections */
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center them */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add more spacing between stacked items */
+    }
+}
+
+
+/* Section styling */
+/* Ensure all sections have consistent spacing */
 section {
     padding: 20px;
-    margin: 20px auto;
-    width: calc(100% - 400px);
-    max-width: 1200px;
+    margin: 20px auto; /* Center sections on the page */
+    width: calc(100% - 400px); /* Deduct 200px on each side */
+    max-width: 1200px; /* Optional: Limit the maximum width for better readability */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Alternatively, apply a universal container */
 .container {
-    margin: 0 auto;
-    padding: 0 200px;
-    box-sizing: border-box;
+    margin: 0 auto; /* Center container */
+    padding: 0 200px; /* 200px padding on left and right */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
-section p,
-section img {
+/* Text or other inner content */
+section p, section img {
     margin: 0 auto;
     max-width: 100%;
     width: auto;
 }
 
+
+/* Heading section for explore */
 #explore-heading {
     text-align: center;
     margin: 50px 0;
@@ -155,22 +177,22 @@ section img {
     margin: 0;
 }
 
-/* Thumbnails */
+/* Thumbnails section */
 #thumbnails {
     padding: 20px;
+    box-sizing: border-box;
     text-align: center;
 }
 
+/* Thumbnail container */
 .thumbnail-container {
     display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap; /* Allow wrapping if necessary */
-    gap: 20px; /* Add spacing between thumbnails */
-    text-align: center; /* Center any inline text within the container */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-
+/* Common Thumbnail styling */
 .thumbnail {
     display: flex;
     flex-direction: column;
@@ -181,43 +203,183 @@ section img {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-height: 300px;
+    max-height: 300px; /* Consistent height */
 }
 
+/* Portfolio Thumbnail - Longer Width */
+.portfolio-thumbnail {
+    max-width: 300px; /* Wider than the resume thumbnail */
+}
+
+/* Resume Thumbnail */
+.resume-thumbnail {
+    max-width: 150px; /* Narrower width */
+}
+
+/* Image inside the thumbnail */
 .thumbnail img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
+    height: 200px; /* Keep consistent height for all images */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and caption */
 }
 
+/* Caption styling */
 .thumbnail p {
     margin: 0;
     padding: 5px;
     font-weight: bold;
     text-align: center;
-    color: #333;
+    color: #333; /* Adjust color if needed */
 }
 
+/* Hover effect on thumbnails */
 .thumbnail:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-#portfolio-download {
+
+/* About Me section styling */
+#about {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically if needed */
-    text-align: center; /* Align text inside */
-    margin: 40px 0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#portfolio-download img {
+#about .about-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+#about .about-text p {
+    margin: 0;
+}
+
+#about .headshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#about .headshot img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
     margin-bottom: 10px;
 }
 
-/* Projects */
+/* Heading styles */
+h2 {
+    color: #333;
+}
+/* Header overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: calc(100% - 40px); /* Smaller margins for mobile */
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Portfolio Section */
+#portfolio-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    text-align: center;
+}
+
+#portfolio-download img {
+    margin-bottom: 10px; /* Space between the thumbnail and text */
+}
+
+.thumbnail {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.thumbnail img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.thumbnail p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Project Sections */
 .project {
     display: flex;
     flex-wrap: wrap;
@@ -244,93 +406,13 @@ section img {
     border-radius: 10px;
 }
 
-/* About Section */
-#about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#about .about-text {
-    flex: 1;
-    padding-right: 20px;
-}
-
-#about .headshot {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-#about .headshot img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-label {
-    font-weight: bold;
-}
-
-input,
-textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    section {
-        width: calc(100% - 40px);
-        padding: 10px;
-    }
-
-    .container {
-        padding: 0 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
     .project {
         flex-direction: column;
         text-align: center;
     }
 
-    .project-image,
-    .project-content {
+    .project-image, .project-content {
         padding: 10px;
     }
 }
