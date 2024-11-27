@@ -1,4 +1,4 @@
-/* General body styling */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,58 +6,58 @@ body {
     padding: 0;
 }
 
-/* Home Page Header */
-.header-home {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: url('src/images/home-image.jpg') no-repeat center center;
-    background-size: cover;
+a {
+    color: #0066cc;
+    text-decoration: none;
 }
 
-/* About Page Header */
-.header-about {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: url('src/images/image4.jpg') no-repeat center center;
-    background-size: cover;
+a:hover {
+    text-decoration: underline;
 }
 
-/* Portfolio Page Header */
-.header-portfolio {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: url('src/images/image3.jpg') no-repeat center center;
-    background-size: cover;
+ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Contact Page Header */
+ul li {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Headers */
+header,
+.header-home,
+.header-about,
+.header-portfolio,
 .header-contact {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
-    background: url('src/images/image2.JPG') no-repeat center center;
     background-size: cover;
+    background-position: center;
 }
 
-
-/* Header styling */
-header {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: url(src/images/image1.jpg) no-repeat center center;
-    background-size: cover;
+.header-home {
+    background: url('src/images/home-image.jpg') no-repeat center;
 }
 
-/* Header overlay */
+.header-about {
+    background: url('src/images/image4.jpg') no-repeat center;
+}
+
+.header-portfolio {
+    background: url('src/images/image3.jpg') no-repeat center;
+}
+
+.header-contact {
+    background: url('src/images/image2.JPG') no-repeat center;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -68,21 +68,20 @@ header {
     z-index: 1;
 }
 
-/* Header content - title */
 header h1 {
     position: absolute;
     z-index: 2;
     color: rgb(136, 96, 37);
     text-align: center;
-    padding-top: 50px;
-    margin: 0;
     font-size: 36px;
     top: 50px;
     width: 100%;
+    margin: 0;
+    padding: 50px 0 0 0;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Navigation bar */
+/* Navigation Bar */
 nav {
     position: absolute;
     bottom: 0;
@@ -94,22 +93,18 @@ nav {
     z-index: 2;
 }
 
-/* Navigation list */
 nav ul {
-    display: flex; /* Flexbox for responsive behavior */
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    list-style: none; /* Remove bullets */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
 
-/* Navigation items */
 nav ul li {
-    margin: 5px 10px; /* Adjust spacing between items */
+    margin: 5px 10px;
 }
 
-/* Navigation links */
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -118,54 +113,37 @@ nav ul li a {
     background-color: rgba(90, 90, 90, 0.8);
     border-radius: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    white-space: nowrap; /* Prevent text from breaking */
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
     background-color: rgba(0, 102, 204, 0.8);
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center them */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Add more spacing between stacked items */
-    }
-}
-
-
-/* Section styling */
-/* Ensure all sections have consistent spacing */
+/* Sections */
 section {
     padding: 20px;
-    margin: 20px auto; /* Center sections on the page */
-    width: calc(100% - 400px); /* Deduct 200px on each side */
-    max-width: 1200px; /* Optional: Limit the maximum width for better readability */
+    margin: 20px auto;
+    width: calc(100% - 400px);
+    max-width: 1200px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Alternatively, apply a universal container */
 .container {
-    margin: 0 auto; /* Center container */
-    padding: 0 200px; /* 200px padding on left and right */
-    box-sizing: border-box; /* Include padding in width calculations */
+    margin: 0 auto;
+    padding: 0 200px;
+    box-sizing: border-box;
 }
 
-/* Text or other inner content */
-section p, section img {
+section p,
+section img {
     margin: 0 auto;
     max-width: 100%;
     width: auto;
 }
 
-
-/* Heading section for explore */
 #explore-heading {
     text-align: center;
     margin: 50px 0;
@@ -177,22 +155,22 @@ section p, section img {
     margin: 0;
 }
 
-/* Thumbnails section */
+/* Thumbnails */
 #thumbnails {
     padding: 20px;
-    box-sizing: border-box;
     text-align: center;
 }
 
-/* Thumbnail container */
 .thumbnail-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+    gap: 20px; /* Add spacing between thumbnails */
+    text-align: center; /* Center any inline text within the container */
 }
 
-/* Common Thumbnail styling */
+
 .thumbnail {
     display: flex;
     flex-direction: column;
@@ -203,44 +181,70 @@ section p, section img {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-height: 300px; /* Consistent height */
+    max-height: 300px;
 }
 
-/* Portfolio Thumbnail - Longer Width */
-.portfolio-thumbnail {
-    max-width: 300px; /* Wider than the resume thumbnail */
-}
-
-/* Resume Thumbnail */
-.resume-thumbnail {
-    max-width: 150px; /* Narrower width */
-}
-
-/* Image inside the thumbnail */
 .thumbnail img {
     width: 100%;
-    height: 200px; /* Keep consistent height for all images */
-    object-fit: cover; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Space between image and caption */
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-/* Caption styling */
 .thumbnail p {
     margin: 0;
     padding: 5px;
     font-weight: bold;
     text-align: center;
-    color: #333; /* Adjust color if needed */
+    color: #333;
 }
 
-/* Hover effect on thumbnails */
 .thumbnail:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+#portfolio-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically if needed */
+    text-align: center; /* Align text inside */
+    margin: 40px 0;
+}
 
-/* About Me section styling */
+#portfolio-download img {
+    margin-bottom: 10px;
+}
+
+/* Projects */
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* About Section */
 #about {
     display: flex;
     justify-content: space-between;
@@ -250,10 +254,6 @@ section p, section img {
 #about .about-text {
     flex: 1;
     padding-right: 20px;
-}
-
-#about .about-text p {
-    margin: 0;
 }
 
 #about .headshot {
@@ -270,7 +270,7 @@ section p, section img {
     object-fit: cover;
 }
 
-/* Form styling */
+/* Forms */
 form {
     display: flex;
     flex-direction: column;
@@ -283,7 +283,8 @@ label {
     font-weight: bold;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -303,48 +304,33 @@ button:hover {
     background-color: #555;
 }
 
-/* Links */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* List styling */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Heading styles */
-h2 {
-    color: #333;
-}
-/* Header overlay */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
-    z-index: 1;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
     section {
-        width: calc(100% - 40px); /* Smaller margins for mobile */
+        width: calc(100% - 40px);
         padding: 10px;
     }
 
     .container {
         padding: 0 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image,
+    .project-content {
+        padding: 10px;
     }
 }
