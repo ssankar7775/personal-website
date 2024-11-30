@@ -390,12 +390,25 @@ h2 {
     border-bottom: 1px solid #ddd;
 }
 
-.project-content {
+.project-content-right {
     flex: 1;
     padding: 20px;
 }
 
-.project-image {
+.project-image-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-content-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.project-image-right {
     flex: 1;
     display: flex;
     justify-content: center;
