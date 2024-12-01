@@ -1,4 +1,10 @@
 /* General body styling */
+p {
+    margin-bottom: 1em;
+    text-indent: 1em;
+    line-height: 1.6;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -392,11 +398,6 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.project-content-right {
-    flex: 1;
-    padding: 20px;
-}
-
 .project-image-left {
     flex: 1;
     display: flex;
@@ -405,6 +406,7 @@ h2 {
     padding: 20px;
 }
 
+.project-content-right,
 .project-content-left {
     flex: 1;
     min-width: 300px; /* Prevents collapsing */
@@ -449,18 +451,27 @@ h2 {
 .dropdown-content {
     display: none;
     margin-top: 1rem;
-    padding: 10px;
+    padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+    width: 100%; /* Full width of the project section */
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center content */
+    box-sizing: border-box; /* Include padding in width calculations */
+    z-index: 10; /* Ensure it's above other content */
+    top: 100%; /* Position it just below the button */
+    left: 0;
 }
 
 /* Dropdown content visibility on toggle */
 .dropdown-content.active {
     display: block;
+    max-height: 1000px;
 }
 
 /* Ensure the button is below the text */
@@ -471,7 +482,25 @@ h2 {
 
 
 .dropdown-content.expanded {
-    max-height: 300px; /* Adjust based on content size */
+    max-height: 1200px; /* Adjust based on content size */
+}
+
+/* Ensure the images in the dropdown are centered and have consistent styling */
+.dropdown-content img {
+    width: 80%; /* Adjust width of images */
+    max-width: 600px; /* Limit maximum width */
+    margin-top: 20px; /* Space between text and images */
+    object-fit: cover; /* Ensure proper image scaling */
+}
+
+/* Text inside the dropdown */
+.dropdown-content h3, .dropdown-content p {
+    text-align: left; /* Center the text */
+    margin-bottom: 20px; /* Space between paragraphs and images */
+}
+
+.dropdown-toggle.active + .dropdown-content {
+    display: block;
 }
 
 /* Button for toggling dropdown */

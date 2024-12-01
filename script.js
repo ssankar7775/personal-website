@@ -96,22 +96,49 @@
 // // Initialize the collage with the first image
 // changeImage();
 
-// Add event listener for the dropdown toggle
+
+
+
+// // Add event listener for the dropdown toggle
+// document.addEventListener("DOMContentLoaded", () => {
+//     const toggleButton = document.querySelector(".dropdown-toggle");
+//     const dropdownContent = document.querySelector(".dropdown-content");
+
+//     toggleButton.addEventListener("click", () => {
+//         // Toggle the visibility of the dropdown content
+//         if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+//             dropdownContent.style.display = "block";
+//         } else {
+//             dropdownContent.style.display = "none";
+//         }
+//     });
+
+//     // Optional: For smooth transitions, toggle a class instead
+//     toggleButton.addEventListener("click", () => {
+//         dropdownContent.classList.toggle("expanded");
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".dropdown-toggle");
-    const dropdownContent = document.querySelector(".dropdown-content");
+    // Select all the toggle buttons and dropdown contents
+    const toggleButtons = document.querySelectorAll(".dropdown-toggle");
+    const dropdownContents = document.querySelectorAll(".dropdown-content");
 
-    toggleButton.addEventListener("click", () => {
-        // Toggle the visibility of the dropdown content
-        if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
-            dropdownContent.style.display = "block";
-        } else {
-            dropdownContent.style.display = "none";
-        }
-    });
+    // Add event listener to each toggle button
+    toggleButtons.forEach((toggleButton, index) => {
+        const dropdownContent = dropdownContents[index];
 
-    // Optional: For smooth transitions, toggle a class instead
-    toggleButton.addEventListener("click", () => {
-        dropdownContent.classList.toggle("expanded");
+        toggleButton.addEventListener("click", () => {
+            // Toggle the visibility of the corresponding dropdown content
+            if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+                dropdownContent.style.display = "block";
+            } else {
+                dropdownContent.style.display = "none";
+            }
+
+            // Optional: For smooth transitions, toggle a class instead
+            dropdownContent.classList.toggle("expanded");
+        });
     });
 });
+
