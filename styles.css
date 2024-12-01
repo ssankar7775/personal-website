@@ -388,6 +388,8 @@ h2 {
     margin: 40px auto;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .project-content-right {
@@ -405,7 +407,8 @@ h2 {
 
 .project-content-left {
     flex: 1;
-    padding: 20px;
+    min-width: 300px; /* Prevents collapsing */
+    padding: 1rem;
 }
 
 .project-image-right {
@@ -413,7 +416,9 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    min-width: 300px; /* Prevents collapsing */
+    text-align: center; /* Optional: Center the image */
+    padding: 1rem;
 }
 
 .project-image img {
@@ -437,5 +442,62 @@ h2 {
 
     .container {
         padding: 0 10px; /* Minimize side padding */
+    }
+}
+
+/* Dropdown content initially hidden */
+.dropdown-content {
+    display: none;
+    margin-top: 1rem;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Dropdown content visibility on toggle */
+.dropdown-content.active {
+    display: block;
+}
+
+/* Ensure the button is below the text */
+.project-content-left .dropdown-toggle {
+    display: block; /* Ensures it takes up the full width */
+    margin-top: 1rem; /* Adds space above the button */
+}
+
+
+.dropdown-content.expanded {
+    max-height: 300px; /* Adjust based on content size */
+}
+
+/* Button for toggling dropdown */
+.dropdown-toggle {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #004c99;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column; /* Stacks content vertically */
+    }
+
+    .project-image-right {
+        margin-top: 1rem; /* Adds space between content and image */
     }
 }
