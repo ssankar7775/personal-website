@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <header class="header-portfolio">
@@ -23,7 +24,7 @@
     
 <!-- Section for the heading -->
 <section id="explore-heading">
-    <h2>Explore My Experiences Below (Work In Progress, Estimated Completion: 12/1/2024) or Download My Portfolio!</h2>
+    <h2>Explore My Experiences Below or Download My Portfolio!</h2>
 </section>
 
     <!-- Downloadable Portfolio Section -->
@@ -80,7 +81,7 @@
             <p>The system was designed with a NPT T-fitting from the piston, featuring an outlet and relief valve on one end and a solenoid attachment on the other. An accumulator was manufactured by the ATLO team due to the expedited timeline of the mechanism and was positioned upstream of the solenoid. The accumulator pressure was designed to maintain a maximum of 1100 psi with a safety factor of 1.3, considering size and mass constraints.</p>
             <p>The system underwent rigorous testing and proved successful in all component and system evaluations. Regrettably, an avionics battery fire occurred shortly after the rocket’s launch from the launch rail, resulting in the loss of telemetry and the inability to activate the recovery mechanism’s solenoid, triggering the deployment of the parachutes.</p>
                 
-            <img src="src/images/project-detail.jpg" alt="Seperation and Deployment Picture">
+            <img src="src/images/Sedep Mech.png" alt="Seperation and Deployment Picture">
         </div>
     </section>
 
@@ -101,16 +102,27 @@
         <div class="project-content-right">
             <h2>CubeSat Flight Lab</h2>
             <h3>Fall 2023 - Summer 2024</h3>
-            <p>Contributed to the development of MASA's solid rocket demonstrator, Lonely Mission, focusing on propulsion systems and the successful implementation of advanced composites.</p>
-        <button class="dropdown-toggle">View More</button>
+            <p>The CubeSat Flight Lab (CFL) offers a research-based course that equips students with knowledge and skills to develop CubeSat missions. After my tenure at MASA, I was particularly drawn to the CFL’s capstone class, which allows students to earn credit while collaborating in a team-oriented environment.</p>
+            <p>The 495-level class is a one-semester program that immerses students in the comprehensive Systems V design cycle, culminating in a StratoSat launch aboard a High-Altitude Balloon.  The students learn about spacecraft development through the Space Mission Analysis and Design textbook and apply the concepts throughout the semester to design, build, test, and launch a StratoSat.</p>
+            <p>Following the 495-level class, students have the option to delve deeper into CubeSat development in a 700-level research-based class. This class prepares students for Michigan’s next CubeSat launch, Michigan Cubed - 10 (MC-10). During the conceptual phase of the project, which involved securing funding for the CubeSat’s construction and submitting a NASA CSLI proposal to identify a cost-effective path to Low Earth Orbit (LEO), students utilized this semester to establish a system architecture and circuitry foundation for payloads developed by other laboratories at the University. These payloads included a magnetometer and an Organic Photovoltaic cell. These payloads were integrated into a StratoSat to assess the feasibility of such a mission.</p>
+            <button class="dropdown-toggle">View More</button>
         </div>
         <div class="project-image-left">
             <img src="src/images/CubeSat Flight Lab.png" alt="CubeSat Flight Lab Picture">
         </div>
         <div class="dropdown-content">
-            <h3>High Altitude Balloon (HAB) Flight Termination Unit (FTU)</h3>
-            <p>This project involved designing and implementing propulsion systems and integrating advanced composites to achieve a lightweight and efficient rocket structure.</p>
-            <img src="src/images/project-detail.jpg" alt="FTU Picture">
+            <h3>495 Capstone Class</h3>
+            <p>Students are divided into teams of five, each assigned specific requirements for their CubeSat mission. During lectures, students gain insights into Space Mission Design and Analysis, while outside class, they design, construct, test, and launch their team’s StratoSat.</p>
+            <p>Each team adopts a unique approach, with each member assuming ownership of a subsystem. I served as the Systems Engineer for our StratoSat payload, which included two PNI RM3100 sensors and a Raspberry Pi camera. The system also included a Raspberry Pi 4B+ flight computer, a Pluto Software Defined Radio, a Power Distribution Unit (PDU) designed by a previous student, and various sensors. These components were housed within a 3D printed PLA structure. As Systems Engineer, I refined requirements, drafted concept of operations, verification and validation documents, and testing procedures. I introduced a ground plane beneath GPS antenna during testing, making our StratoSat the sole team to record GPS data. Despite camera malfunction due to memory allocation issues, primary payload data (magnetometers) were successfully recovered.</p>
+            <h3>740 Research Class</h3>
+            <p>The 740 research class, was a student led class of 36 senior undergraduate and graduate students, aimed to design and develop Michigan’s next CubeSat, the MC-10. Two labs at the University of Michigan had developed an Organic Photovoltaic cell and a Magnetometer payloads for the CubeSat. The team, comprising five students in each of six subsystems and a Systems team, aimed to identify a system architecture and demonstrate its functionality through a High-Altitude Balloon flight.</p>
+            <p>The teams were responsible for command and data handling, communications, structures, electronic power systems, and payload development. The initial architecture was designed to facilitate the development of two minimum viable products (MVPs) within 12 weeks. However, communication challenges hindered the development process. Upon reaching the first MVP deadline, the team faced numerous unmet requirements, leading to a project restructuring. The Systems team implemented measures like eliminating attendance restrictions, weekly design updates, adopting Redmine (open source version of JIRA), and enhancing the system’s team involvement.</p>
+            <p>To ensure accountability for the HAB launch, the team developed three additional MVPs. However, two weeks before the launch, JPL’s F prime software issues caused software integration and testing complications. A few days before, the team switched to Python and integrated the software overnight.</p>
+            <p>However, memory allocation issues with the new Python-based CDH during the launch caused a failed mission for the semester. The launch was thoroughly investigated and documented.</p>
+            <h3>Summer 2024 Continued Work</h3>
+            <p>Due to several unforeseen circumstances with my transfer, I was informed the evening before Winter graduation that I was two credits short of meeting the graduation requirements. To rectify this situation, I dedicated the summer to collaborating with the Canadian Forces Leadership Institute (CFL) in the development of a Flight Termination Unit (FTU) for high-altitude balloon flights. During this project, I integrated an RP2040-based microcontroller with a LoRa bonnet developed by Adafruit and designed a system architecture for a Nichrome-based termination unit. While this project was initially presented at the concept demonstration phase, it has now been taken over by a new team.</p>
+            <p>Additionally, I served as a systems engineer for the planned StratoSat named SL-1. This mission aimed to provide the team with operational visibility (OPV) and magnetometer data that was previously unavailable due to a previous failure. Furthermore, it sought to reduce the size of the radio and flight computer by utilizing a smaller payload. The primary objective of this mission was to record payload data at an altitude of 35 km, which would result in a significant reduction in mass from the previous 7 kg StratoSat to a 1.2 kg StratoSat. Regrettably, due to unfavorable launch conditions and a shortage of personnel, the mission was ultimately canceled.</p>
+            <img src="src/images/Untitled design.png" alt="CFL Picture">
         </div>
     </section>
 </body>

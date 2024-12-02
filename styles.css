@@ -471,7 +471,7 @@ h2 {
 /* Dropdown content visibility on toggle */
 .dropdown-content.active {
     display: block;
-    max-height: 1000px;
+    max-height: 2000px;
 }
 
 /* Ensure the button is below the text */
@@ -482,7 +482,7 @@ h2 {
 
 
 .dropdown-content.expanded {
-    max-height: 1200px; /* Adjust based on content size */
+    max-height: 3000px; /* Adjust based on content size */
 }
 
 /* Ensure the images in the dropdown are centered and have consistent styling */
@@ -491,6 +491,9 @@ h2 {
     max-width: 600px; /* Limit maximum width */
     margin-top: 20px; /* Space between text and images */
     object-fit: cover; /* Ensure proper image scaling */
+    margin: 20px auto; /* Centers the image horizontally and adds vertical spacing */
+    display: block; /* Ensures the image behaves like a block-level element for centering */
+
 }
 
 /* Text inside the dropdown */
