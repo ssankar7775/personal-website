@@ -8,21 +8,34 @@
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <div class="overlay"></div>
-        <h1>Welcome to Tosh's Professional Website</h1>
-        <nav>
+    <header class="snap-full snap reveal" data-parallax>
+        <nav class="topnav">
+            <div class="logo">Tosh Sankar</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Hi — I'm Tosh Sankar</h1>
+            <p class="hero-subtitle">Aerospace Engineer focused on systems, avionics, and rapid prototyping.</p>
+            <div class="hero-ctas">
+                <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+                <a class="btn btn-secondary" href="src/Santhosh%20Sankar%20Resume%20Aerospace.pdf" download>Download Resume</a>
+            </div>
+        </div>
     </header>
+    <div id="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
     
+    <main class="content-bg">
     <!-- About Me Section -->
-    <section id="about">
+    <section id="about" class="reveal mars-1">
+        <div class="card">
         <div class="about-text">
             <h2>About Me</h2>            
             <p>Hi! I’m Tosh Sankar, a recent Aerospace Engineering graduate with hands-on experience in spacecraft systems design, project leadership, and a focus on communications, avionics, 3D printing, and mechanical systems. I’m passionate about advancing space and defense systems and am committed to making space more accessible through innovative engineering solutions.</p>
@@ -34,15 +47,12 @@
         <div class="headshot">
             <img src="src/images/headshot.jpg" alt="Headshot of Tosh Sankar">
         </div>
+        </div>
     </section>
 
 <!-- Section for the heading -->
-<section id="explore-heading">
+<section id="explore-heading" class="reveal mars-2">
     <h2>Explore My Work</h2>
-</section>
-
-<!-- Thumbnails for Portfolio and Resume -->
-<section id="thumbnails">
     <div class="thumbnail-container">
         <!-- Portfolio Thumbnail -->
         <a href="portfolio.html" class="thumbnail portfolio-thumbnail">
@@ -61,7 +71,7 @@
     
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
+    <section id="portfolio" class="reveal mars-3">
         <h2>Portfolio</h2>
         <ul>
             <li>
@@ -80,7 +90,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="reveal mars-4">
         <h2>Contact Me</h2>
         <form action="https://formspree.io/f/xblrevnr" method="POST">
             <label for="name">Name:</label>
@@ -96,7 +106,9 @@
         </form>
     </section>
 
-    <!-- Smooth Scrolling Script -->
+    </main>
+    <script src="script.js"></script>
+    <!-- Smooth Scrolling Script (fallback) -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -107,5 +119,6 @@
             });
         });
     </script>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>

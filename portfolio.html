@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="script.js" defer></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,9 @@
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-    <header class="header-portfolio">
-        <div class="overlay"></div>
-        <h1>My Portfolio</h1>
-        <nav>
+    <header class="header-portfolio snap-full snap reveal" data-parallax>
+        <nav class="topnav">
+            <div class="logo">Tosh Sankar</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -20,15 +18,24 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Portfolio</h1>
+            <p class="hero-subtitle">Selected projects in aerospace systems, composites, and controls.</p>
+        </div>
     </header>
+    <div id="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
     
-<!-- Section for the heading -->
-<section id="explore-heading">
-    <h2>Explore My Experiences Below or Download My Portfolio!</h2>
-</section>
+    <main class="content-bg">
+    <!-- Section for the heading -->
+    <section id="explore-heading" class="reveal mars-2">
+        <h2>Explore My Experiences Below or Download My Portfolio!</h2>
+    </section>
 
     <!-- Downloadable Portfolio Section -->
-    <section id="portfolio-download">
+    <section id="portfolio-download" class="reveal mars-3">
         <div class="thumbnail-container">
             <a href="src/Santhosh Sankar's Project Portfolio.pdf" class="thumbnail portfolio-thumbnail" download>
                 <img src="src/portfolio-thumbnail.png" alt="Portfolio Thumbnail">
@@ -38,7 +45,8 @@
     </section>
 
     <!-- Project Sections -->
-    <section class="project">
+    <div class="projects">
+    <section class="project reveal mars-4">
         <div class="project-content-left">
             <h2>MRacing Formula SAE</h2>
             <h3>Winter 2022</h3>
@@ -49,7 +57,7 @@
         </div>
     </section>
 
-    <section class="project">
+    <section class="project reveal mars-5">
         <div class="project-content-right">
             <h2>Michigan Vertical Flight Technology (MVFT), Model Based Systems Engineering</h2>
             <h3>Fall 2022</h3>
@@ -61,8 +69,8 @@
         </div>
     </section>
 
-    <section class="project">
-        <div class="project-content-left">
+    <section class="project reveal mars-6">
+        <div class="project-content-left wide-content">
             <h2>Michigan Aeronautical Science Association (MASA)</h2>
             <h3>Summer 2022 - Summer 2023</h3>
             <p>Following my tenure with MRacing, I recognized the opportunity to redirect my focus toward learning more about launch vehicles and taking on a more project-oriented role within a team. <a href="https://masa.engin.umich.edu/Admin/" target="_blank">MASA</a> is dedicated to developing Liquid Bi-propellent rockets, providing students with practical experience in industry-level rocketry and facilitating the iteration of previous innovations. The team has a history of liquid rockets initially conceived under the Tangarine Space Missions (TSM) program, and I could elaborate on their remarkable journey and growth in talent over the years. If you are interested, please feel free to contact me for further information.</p>
@@ -85,7 +93,7 @@
         </div>
     </section>
 
-    <section class="project">
+    <section class="project reveal mars-1">
         <div class="project-content-right">
             <h2>Human Powered Submarine</h2>
             <h3>Fall 2023 - Summer 2024</h3>
@@ -99,7 +107,7 @@
     </section>
 
     <section class="project">
-        <div class="project-content-right">
+        <div class="project-content-right wide-content">
             <h2>CubeSat Flight Lab</h2>
             <h3>Fall 2023 - Summer 2024</h3>
             <p>The CubeSat Flight Lab (CFL) offers a research-based course that equips students with knowledge and skills to develop CubeSat missions. After my tenure at MASA, I was particularly drawn to the CFL’s capstone class, which allows students to earn credit while collaborating in a team-oriented environment.</p>
@@ -125,5 +133,9 @@
             <img src="src/images/Untitled design.png" alt="CFL Picture">
         </div>
     </section>
+    </div>
+    </main>
+    <script src="script.js"></script>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>
