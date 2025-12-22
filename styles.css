@@ -582,19 +582,32 @@ section:nth-of-type(6n+6) .card h2 { color: var(--mars-brown) !important; }
 /* Two-column project layout: text + image side-by-side */
 .project {
     display: flex;
-    align-items: center;
-    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 .project .project-content-left, .project .project-content-right, .project .project-content {
-    flex: 1 1 700px; /* wider flex-basis to reduce wrapping */
+    flex: 1 1 600px; /* wider flex-basis to reduce wrapping */
     min-width: 0; /* allow flex children to shrink properly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
 }
 
 /* Exception for specific large text sections that need more width */
 .project .wide-content,
 .project > .card > .wide-content {
-    flex: 1 1 920px; /* give more room for MASA and CubeSat text */
-    max-width: 920px;
+    flex: 1 1 700px; /* give more room for MASA and CubeSat text */
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
+}
+
+/* Dropdown expands full-width below the content */
+.project .dropdown-content {
+    flex: 1 0 100%;
+    order: 2;
+    margin-right: 0;
 }
 
 /* Increase the card max-width inside the projects container so wide-content has real room
@@ -602,13 +615,19 @@ section:nth-of-type(6n+6) .card h2 { color: var(--mars-brown) !important; }
 .projects .project > .card {
     max-width: 1400px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 /* Allow wide-content to take even more space before wrapping */
 .project .wide-content,
 .project > .card > .wide-content {
-    flex: 1 1 1080px;
-    max-width: 1080px;
+    flex: 1 1 700px;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
 }
 
 /* Ensure images shrink gracefully when container is narrower */
@@ -621,35 +640,39 @@ section:nth-of-type(6n+6) .card h2 { color: var(--mars-brown) !important; }
 }
 
 /* Handle case where script.js wraps section children into a .card: make the .card the flex container */
-.project > .card {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    background: transparent; /* preserve card visual elsewhere */
-}
 .project > .card > .project-content-left,
 .project > .card > .project-content-right,
 .project > .card > .project-content {
-    flex: 1 1 700px;
+    flex: 1 1 600px;
     min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
 }
 .project > .card > .project-image-left,
 .project > .card > .project-image-right,
 .project > .card > .project-image {
     flex: 0 0 360px;
 }
+
+/* Dropdown in card also expands full-width below */
+.project > .card > .dropdown-content {
+    flex: 1 0 100%;
+    order: 2;
+    margin-right: 0;
+}
 .project img { max-width: 100%; border-radius: 10px; box-shadow: 0 12px 36px rgba(2,6,23,0.12); }
 
 /* Ensure consistent ordering: text then image for readability */
-.project .project-content-left { order: 0; }
+.project .project-content-left { order: 0; display: flex; flex-direction: column; }
 .project .project-image-right, .project .project-image { order: 1; }
-.project .project-content-right { order: 0; }
+.project .project-content-right { order: 0; display: flex; flex-direction: column; }
 .project .project-image-left { order: 1; }
 
 @media (max-width: 900px){
     .project { flex-direction: column; align-items: stretch; }
     .project .project-image-left, .project .project-image-right, .project .project-image { order: 0; flex: none; width: 100%; }
-    .project .project-content-left, .project .project-content-right, .project .project-content { width: 100%; }
+    .project .project-content-left, .project .project-content-right, .project .project-content { width: 100%; order: initial; }
 }
 
 /* Alternate image/text order for each project for a cleaner zig-zag layout
@@ -779,8 +802,8 @@ body {
 
 /* Dropdown reveal content (animated) */
 .dropdown-content {
-    margin-top: 1rem;
-    padding: 0 20px; /* padding will expand when open */
+    margin-top: 24px;
+    padding: 0; /* will be set to 20px when expanded */
     background-color: rgba(255,255,255,0.98);
     color: #111;
     border-radius: 8px;
@@ -791,76 +814,63 @@ body {
     width: 100%;
     box-sizing: border-box;
     opacity: 0;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 /* Expanded state */
 .dropdown-content.expanded {
-    max-height: 2400px; /* large enough to reveal content */
+    max-height: 3000px;
     padding: 20px;
     opacity: 1;
 }
 
-.dropdown-toggle { display:inline-block; margin-top:12px; }
-
-/* Make expanded dropdowns more readable */
-.dropdown-content {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #111;
-}
-
-.dropdown-content p { margin-bottom: 12px; color: #222; }
-.dropdown-content h3 { margin-top: 0; color: #0b3f9a; }
-.dropdown-content img { max-width: 100%; height: auto; margin-top: 14px; border-radius: 8px; display:block; }
-.dropdown-content.expanded { max-width: 980px; margin: 0 auto; }
-
-/* Ensure the button is below the text */
-.project-content-left .dropdown-toggle {
-    display: block; /* Ensures it takes up the full width */
-    margin-top: 1rem; /* Adds space above the button */
-}
-
-
-.dropdown-content.expanded {
-    max-height: 3000px; /* Adjust based on content size */
-}
-
-/* Ensure the images in the dropdown are centered and have consistent styling */
-.dropdown-content img {
-    width: 80%; /* Adjust width of images */
-    max-width: 600px; /* Limit maximum width */
-    margin-top: 20px; /* Space between text and images */
-    object-fit: cover; /* Ensure proper image scaling */
-    margin: 20px auto; /* Centers the image horizontally and adds vertical spacing */
-    display: block; /* Ensures the image behaves like a block-level element for centering */
-
-}
-
-/* Text inside the dropdown */
-.dropdown-content h3, .dropdown-content p {
-    text-align: left; /* Center the text */
-    margin-bottom: 20px; /* Space between paragraphs and images */
-}
-
-.dropdown-toggle.active + .dropdown-content {
-    display: block;
-}
-
 /* Button for toggling dropdown */
 .dropdown-toggle {
-    margin-top: 10px;
-    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
     background-color: #0066cc;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-toggle:hover {
     background-color: #004c99;
+}
+
+/* Make expanded dropdowns readable */
+.dropdown-content p {
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.dropdown-content h3 {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #0b3f9a;
+}
+
+.dropdown-content h3:first-child {
+    margin-top: 0;
+}
+
+.dropdown-content img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
 }
 
 /* Responsive design for smaller screens */
