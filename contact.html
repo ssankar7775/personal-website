@@ -5,20 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1>Contact Me</h1>
-        <nav>
+    <header class="header-contact snap-full snap reveal" data-parallax>
+        <nav class="topnav">
+            <div class="logo">Tosh Sankar</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Contact</h1>
+            <p class="hero-subtitle">Get in touch — I’m open to roles and collaborations.</p>
+        </div>
     </header>
-    <section>
+    <div id="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
+    <main class="content-bg">
+    <section class="reveal mars-4">
         <h2>Contact</h2>
         <p>You can reach me using the form below:</p>
         <form action="https://formspree.io/f/xblrevnr" method="POST">
@@ -32,7 +42,10 @@
             <textarea id="message" name="message" rows="4" required></textarea>
     
             <button type="submit">Send Message</button>
-        </form>
+</form>
     </section>
+    </main>
+    <script src="script.js"></script>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>

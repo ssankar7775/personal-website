@@ -5,53 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1>About Me</h1>
-        <nav>
+    <header class="header-about snap-full snap reveal" data-parallax>
+        <nav class="topnav">
+            <div class="logo">Tosh Sankar</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>About</h1>
+            <p class="hero-subtitle">Systems-focused Aerospace Engineer — systems engineering, prototyping, and testing.</p>
+        </div>
     </header>
-    <section>
+    <div id="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
+        <main class="content-bg">
+        <section class="reveal mars-1">
         <h2>Introduction</h2>
-        <p>Hi, I'm [Your Name], a [Your Profession]. With a background in [mention your industry or field], I am passionate about [your specific area of expertise]. I enjoy solving complex challenges and contributing to meaningful projects that push boundaries.</p>
+        <p>Hi, I’m Tosh Sankar, an Aerospace Engineer driven by solving complex challenges and contributing to projects that push the boundaries of what's possible. Growing up near Detroit, my fascination with automotive engineering led me to aerospace after seeing SpaceX's Falcon 9 landing. I focus on systems engineering, avionics, and rapid prototyping.</p>
+
+        <p>In high school I developed CAD, programming, and robotics skills through IB coursework and extracurriculars. After beginning at Western Michigan University, I transferred to the University of Michigan to pursue hands-on project work and leadership opportunities.</p>
+
+        <p>At U‑M I joined teams such as MASA and the CubeSat Flight Lab, taking roles in design, integration, and systems engineering. These projects taught me rigorous testing, documentation, and effective team coordination.</p>
+
+        <p>My background spans spacecraft subsystems, composite manufacturing, and avionics — I enjoy turning complex requirements into practical, testable systems.</p>
     </section>
 
-    <section>
+    <section class="reveal mars-2">
         <h2>Education</h2>
-        <p>I graduated from the University of Michigan with a Bachelor's degree in Aerospace Engineering. During my time there, I worked on [mention any specific projects or research] and developed skills in [mention any technical or engineering skills].</p>
+        <p>
+            I earned my Bachelor's degree in Aerospace Engineering from the University of Michigan after initially starting my studies at Western Michigan University, where I was recognized on the Dean’s List. My education focused on key areas such as Aerodynamics, Spacecraft Dynamics, and Propulsion, complemented by hands-on experience with advanced engineering projects like Amature Liquid Rocketry, CubeSat development, and human-powered submarine design.
+        </p>
     </section>
 
-    <section>
-        <h2>Career & Work Experience</h2>
-        <p>My career has taken me through various exciting roles, including working as a Test Engineer at [previous company] where I [mention key accomplishments or responsibilities]. I also gained experience in [mention specific areas like 3D printing, aerospace testing, etc.] during my time with [mention any other relevant companies].</p>
-    </section>
-
-    <section>
+    <section class="reveal mars-3">
         <h2>Skills & Expertise</h2>
         <ul>
-            <li>Aerospace engineering principles</li>
-            <li>3D printing and additive manufacturing</li>
-            <li>Structural analysis and design</li>
-            <li>Test engineering and product development</li>
-            <li>Programming (mention any programming languages or tools)</li>
+            <li>Aerospace Engineering Principles</li>
+            <li>3D Printing and Additive Manufacturing</li>
+            <li>Structural Analysis and Design</li>
+            <li>Test Engineering</li>
+            <li>Systems Engineering and Integration</li>
+            <li>Communications Systems (LoRa, RF communication)</li>
+            <li>Avionics Hardware</li>
+            <li>Mechanical Systems (Structural and Fluids)</li>
+            <li>Concept of Operations and Requirements Development</li>
+            <li>Trade Studies and Interface Control Documentation (ICD)</li>
+            <li>Composite Manufacturing and Materials Science</li>
+            <li>Electronics Prototyping</li>
+            <li>Pneumatic and Pyrotechnic Systems</li>
+            <li>CAD and FEA Software (SolidWorks, NX, ANSYS, teamcenter)</li>
+            <li>Programming (Python, MATLAB, C++, Linux)</li>
+            <li>Model-Based Systems Engineering (MBSE)</li>
+            <li>Project Management and Leadership</li>
+            <li>Data Analysis and Visualization</li>
+            <li>Quality Assurance and Testing Procedures</li>
         </ul>
     </section>
+    
 
-    <section>
+    <section class="reveal mars-4">
         <h2>Personal Interests</h2>
-        <p>Outside of work, I’m passionate about space exploration, 3D printing, and technology. I enjoy staying up to date with advancements in space technologies, and I also pursue hobbies like [mention any other hobbies, such as gaming, hiking, etc.].</p>
+        <p>Outside of work, I'm passionate about music and love expressing myself through it. I play the piano, flute, and guitar, and I enjoy exploring a wide range of genres, from symphonies to Country and hip-hop. Creating my own beats is a fun way for me to escape and unleash my creativity. I'm also an avid runner and recently completed a half marathon, with plans to tackle a full marathon next year. Additionally, I'm a huge Formula 1 fan, especially when it comes to Lewis Hamilton, and I find joy in getting lost in a good book.</p>
     </section>
+    
 
-    <section>
+    <section class="reveal mars-5">
         <h2>Goals & Aspirations</h2>
-        <p>Looking ahead, I’m excited to continue growing in the aerospace industry, especially in areas like spacecraft design and additive manufacturing. My goal is to contribute to projects that make space exploration more accessible and sustainable.</p>
+        <p>As I look to the future, I am passionate about advancing my career in the aerospace sector, with a particular focus on spacecraft design, pressureized launch vehical systems, and mission operations. I believe in the power of teamwork and collaboration, and I am excited about the prospect of leading diverse teams to solve challenging engineering problems. My ambition is to foster an inclusive environment where all voices are heard, enabling us to create innovative solutions together. I aim to develop my skills in systems engineering and mission operations, gradually progressing to leadership roles that allow me to drive impactful projects and contribute to the accessibility and sustainability of space exploration.</p>
     </section>
+    </main>
+    <script src="script.js"></script>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>

@@ -1,92 +1,391 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+:root{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#0b63ce;
+    --accent-2:#0b3f9a;
+    --brand:#0b63ce;
+    /* Mars color palette */
+    --mars-deep:#7A2C2C;    /* deep maroon */
+    --mars-terracotta:#E07A5F; /* warm terra cotta */
+    --mars-sand:#F2C6A0;    /* pale sand */
+    --mars-accent:#B14A3E;  /* mid accent */
+    --mars-rust:#B14A3E;
+    --mars-ochre:#E6963C;
+    --mars-brown:#A07857;
+    --radius:10px;
+    --section-bg: url('src/images/chatgpt-bg.png?v=2'); /* use PNG if present; change version to bust cache */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* General body styling */
+p{
+    margin-bottom:1em;
+    line-height:1.7;
+    color:var(--muted);
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color:var(--bg);
+    margin:0;
+    padding:0;
+    color:#222;
+}
+
+/* Home Page Header */
+.header-home {
     position: relative;
-}
-
-/* Updated Navigation Bar styles */
-nav {
-    background-color: #444;
-    text-align: center;
-    padding: 10px 0;
-    border-top: 2px solid #333;
     width: 100%;
-    border-radius: 20px; /* Rounded corners for the background box */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow around the background */
-    margin: 0 auto; /* Center the nav bar if it's in a container */
-    display: inline-block; /* Shrinks the nav bar to fit the content */
+    min-height: 100vh;
+    overflow: hidden;
+    background: url('src/images/home-image.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* About Page Header */
+.header-about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url('src/images/image4.jpg') no-repeat center center;
+    background-size: cover;
 }
 
+/* Portfolio Page Header */
+.header-portfolio {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url('src/images/image3.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Contact Page Header */
+.header-contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url('src/images/image2.JPG') no-repeat center center;
+    background-size: cover;
+}
+
+
+/* Header styling */
+header{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    background: url('src/images/image1.jpg') no-repeat center center;
+    background-size:cover;
+}
+
+/* Header overlay */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(6,21,46,0.45), rgba(6,21,46,0.35));
+    z-index:1;
+}
+
+/* Header content - title */
+/* Hero content */
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    text-align:center;
+    color: #fff;
+    width:90%;
+    max-width:900px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:42px;
+    margin:0 0 12px 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle{
+    font-size:18px;
+    color:rgba(255,255,255,0.85);
+    margin-bottom:18px;
+}
+
+/* Navigation bar */
+/* Top navigation inside header */
+.topnav{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+    width:90%;
+    max-width:1100px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.topnav .logo{
+    color:white;
+    font-weight:700;
+    letter-spacing:0.3px;
+}
+
+.topnav ul{
+    display:flex;
+    gap:12px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.topnav ul li a{
+    color:rgba(255,255,255,0.95);
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(0,0,0,0.25);
+    font-weight:600;
+}
+
+.topnav ul li a:hover{background:rgba(0,0,0,0.4)}
+
+/* Navigation list */
+/* keep existing responsive nav support */
+
+/* Navigation items */
 nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+    margin: 5px 10px; /* Adjust spacing between items */
 }
 
+/* Navigation links */
 nav ul li a {
-    display: inline-block; /* Makes the links behave like buttons */
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #5a5a5a; /* Button background color */
-    padding: 10px 20px;
-    border-radius: 20px; /* Rounded corners for the buttons */
+    padding: 5px 15px;
+    background-color: rgba(90, 90, 90, 0.8);
+    border-radius: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    border: none; /* Removes any default border */
-    box-shadow: none; /* Removes light box around buttons */
+    white-space: nowrap; /* Prevent text from breaking */
 }
 
 nav ul li a:hover {
-    background-color: #0066cc; /* Hover color change */
-    color: #fff;
-    text-decoration: none; /* Removes underline on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow when hovering */
+    background-color: rgba(0, 102, 204, 0.8);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center them */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add more spacing between stacked items */
+    }
 }
 
 
 /* Section styling */
-section {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Ensure all sections have consistent spacing */
+/* content background wrapper: holds continuous background image behind sections */
+.content-bg{
+    background-image: var(--section-bg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* makes the image feel continuous when scrolling */
+    position: relative;
 }
 
-h2 {
+/* overlay to keep text readable */
+.content-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(245,247,250,0.04));pointer-events:none}
+
+section{
+    position: relative;
+    padding: 60px 0; /* give vertical space; content will live in .card */
+    margin: 24px 0; /* sections span full-width visually */
+    width: 100%;
+    background: transparent;
+}
+
+/* card: white content container inside the section */
+.card{
+    /* dark, semi-opaque card like previous look */
+    background: rgba(8,8,10,0.72); /* dark ~72% opacity */
+    color: #fff;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 14px 44px rgba(2,6,23,0.32);
+    border: 1px solid rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    overflow: visible;
+}
+
+/* thin accent bar on top of the card to provide a colored pop */
+.card::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    height: 6px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.card h2, .card h3 { color: inherit; }
+.card p, .card li, .card a, .card label {
+    color: rgba(255,255,255,0.95);
+}
+
+.card .btn-secondary{
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Alternatively, apply a universal container */
+.container {
+    margin: 0 auto; /* Center container */
+    padding: 0 200px; /* 200px padding on left and right */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Text or other inner content */
+section p, section img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+}
+
+
+/* Heading section for explore */
+#explore-heading {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#explore-heading h2 {
+    font-size: 28px;
     color: #333;
+    margin: 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* spacing for thumbnails when combined under explore heading */
+#explore-heading .thumbnail-container { margin-top: 18px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap }
+
+/* Thumbnails section */
+#thumbnails {
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-ul li {
-    margin-bottom: 10px;
+/* Thumbnail container */
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-a {
-    color: #0066cc;
-    text-decoration: none;
+/* Common Thumbnail styling */
+.thumbnail{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-decoration:none;
+    color:var(--muted);
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .22s ease, box-shadow .22s ease;
+    border:1px solid rgba(15,23,42,0.06);
 }
 
-a:hover {
-    text-decoration: underline;
+/* Portfolio Thumbnail - Longer Width */
+.portfolio-thumbnail {
+    max-width: 300px; /* Wider than the resume thumbnail */
+}
+
+/* Resume Thumbnail */
+.resume-thumbnail {
+    max-width: 150px; /* Narrower width */
+}
+
+/* Image inside the thumbnail */
+.thumbnail img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+/* Caption styling */
+.thumbnail p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Adjust color if needed */
+}
+
+/* Hover effect on thumbnails */
+.thumbnail:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
+
+
+/* About Me section styling */
+/* About Me section styling */
+#about {
+    /* section wrapper remains full-width; inner .card will handle layout */
+}
+
+/* About card layout: text left, headshot right */
+#about .card{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+}
+
+#about .about-text{
+    flex:1;
+    padding-right:20px;
+}
+
+#about .about-text p {
+    margin: 0;
+}
+
+#about .headshot{
+    flex:0 0 260px;
+    display:flex;
+    justify-content:center;
+}
+
+#about .headshot img{
+    width:100%;
+    max-width:220px;
+    height:auto;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 8px 24px rgba(2,6,23,0.12);
 }
 
 /* Form styling */
@@ -109,53 +408,509 @@ input, textarea {
     width: 100%;
 }
 
-button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Button system */
+.btn{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    cursor:pointer;
 }
 
-button:hover {
-    background-color: #555;
+.btn-primary{background:var(--brand);color:#fff}
+.btn-secondary{background:rgba(255,255,255,0.95);color:var(--brand);border:1px solid rgba(11,99,206,0.12)}
+
+.btn:hover{filter:brightness(.96)}
+
+/* Links */
+a {
+    color:var(--accent);
+    text-decoration:none;
 }
 
-/* Thumbnail Section */
-#thumbnails {
+a:hover{text-decoration:underline}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Heading styles */
+h2 {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: calc(100% - 40px); /* Smaller margins for mobile */
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Mars-tinted palette cycling across sections (subtle tints)
+   Colors: terracotta, sand, rust, deep maroon, ochre, brown
+*/
+section:nth-of-type(6n+1){
+    background: linear-gradient(180deg, rgba(224,122,95,0.10), rgba(242,198,160,0.05)); /* terracotta */
+    border: 1px solid rgba(224,122,95,0.04);
+}
+section:nth-of-type(6n+1) .card::before{ background: rgba(224,122,95,0.95); }
+section:nth-of-type(6n+2){
+    background: linear-gradient(180deg, rgba(242,198,160,0.10), rgba(242,198,160,0.04)); /* sand */
+    border: 1px solid rgba(242,198,160,0.03);
+}
+section:nth-of-type(6n+2) .card::before{ background: rgba(242,198,160,0.95); }
+section:nth-of-type(6n+3){
+    background: linear-gradient(180deg, rgba(181,74,62,0.10), rgba(177,74,62,0.05)); /* rust */
+    border: 1px solid rgba(181,74,62,0.04);
+}
+section:nth-of-type(6n+3) .card::before{ background: rgba(181,74,62,0.95); }
+section:nth-of-type(6n+4){
+    background: linear-gradient(180deg, rgba(122,44,44,0.10), rgba(122,44,44,0.05)); /* deep maroon */
+    border: 1px solid rgba(122,44,44,0.04);
+}
+section:nth-of-type(6n+4) .card::before{ background: rgba(122,44,44,0.95); }
+section:nth-of-type(6n+5){
+    background: linear-gradient(180deg, rgba(230,150,60,0.10), rgba(230,150,60,0.04)); /* ochre */
+    border: 1px solid rgba(230,150,60,0.04);
+}
+section:nth-of-type(6n+5) .card::before{ background: rgba(230,150,60,0.95); }
+section:nth-of-type(6n+6){
+    background: linear-gradient(180deg, rgba(160,120,90,0.10), rgba(160,120,90,0.04)); /* brown */
+    border: 1px solid rgba(160,120,90,0.04);
+}
+section:nth-of-type(6n+6) .card::before{ background: rgba(160,120,90,0.95); }
+
+/* Color the section headings (h2) with corresponding Mars palette accents */
+section:nth-of-type(6n+1) .card h2 { color: var(--mars-terracotta); }
+section:nth-of-type(6n+2) .card h2 { color: var(--mars-sand); }
+section:nth-of-type(6n+3) .card h2 { color: var(--mars-rust); }
+section:nth-of-type(6n+4) .card h2 { color: var(--mars-deep); }
+section:nth-of-type(6n+5) .card h2 { color: var(--mars-ochre); }
+section:nth-of-type(6n+6) .card h2 { color: var(--mars-brown); }
+/* Also apply to any h2 directly under sections to catch headings outside .card */
+section:nth-of-type(6n+1) h2 { color: var(--mars-terracotta) !important; }
+section:nth-of-type(6n+2) h2 { color: var(--mars-sand) !important; }
+section:nth-of-type(6n+3) h2 { color: var(--mars-rust) !important; }
+section:nth-of-type(6n+4) h2 { color: var(--mars-deep) !important; }
+section:nth-of-type(6n+5) h2 { color: var(--mars-ochre) !important; }
+section:nth-of-type(6n+6) h2 { color: var(--mars-brown) !important; }
+
+/* Strong override to ensure h2 inside .card inherit the section accent color */
+section:nth-of-type(6n+1) .card h2 { color: var(--mars-terracotta) !important; }
+section:nth-of-type(6n+2) .card h2 { color: var(--mars-sand) !important; }
+section:nth-of-type(6n+3) .card h2 { color: var(--mars-rust) !important; }
+section:nth-of-type(6n+4) .card h2 { color: var(--mars-deep) !important; }
+section:nth-of-type(6n+5) .card h2 { color: var(--mars-ochre) !important; }
+section:nth-of-type(6n+6) .card h2 { color: var(--mars-brown) !important; }
+
+/* Explicit Mars classes to force heading colors across pages */
+.mars-1 h2, .mars-1 .card h2 { color: var(--mars-terracotta) !important; }
+.mars-2 h2, .mars-2 .card h2 { color: var(--mars-sand) !important; }
+.mars-3 h2, .mars-3 .card h2 { color: var(--mars-rust) !important; }
+.mars-4 h2, .mars-4 .card h2 { color: var(--mars-deep) !important; }
+.mars-5 h2, .mars-5 .card h2 { color: var(--mars-ochre) !important; }
+.mars-6 h2, .mars-6 .card h2 { color: var(--mars-brown) !important; }
+
+@media (max-width:768px){
+    section{padding:28px 0;margin:18px 0}
+    .card{padding:18px;margin:0 16px;border-radius:10px}
+}
+
+/* Scroll progress bar */
+#scroll-progress{position:fixed;left:0;top:0;height:4px;width:100%;background:transparent;z-index:9999}
+.scroll-progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--accent-2));box-shadow:0 4px 12px rgba(11,63,130,0.18);transition:width .12s linear}
+
+/* Back to top button */
+#back-to-top{position:fixed;right:22px;bottom:28px;z-index:9999;background:var(--brand);color:#fff;border:none;padding:10px 12px;border-radius:10px;box-shadow:0 8px 24px rgba(2,6,23,0.12);cursor:pointer;font-size:18px;display:none}
+#back-to-top.show{display:block}
+
+/* Thumbnail tilt and hover */
+.thumbnail, .project-image-right img, .project-image-left img{transition:transform .35s cubic-bezier(.22,.9,.24,1), box-shadow .25s; will-change:transform}
+.thumbnail:hover, .project-image-right img:hover, .project-image-left img:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+
+/* Lightbox (created dynamically by JS) */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,10,20,0.75);z-index:10000;opacity:0;pointer-events:none;transition:opacity .2s}
+.lightbox.show{opacity:1;pointer-events:auto}
+.lightbox-inner{position:relative;max-width:90%;max-height:90%;}
+.lightbox-inner img{width:100%;height:auto;border-radius:12px;box-shadow:0 30px 80px rgba(2,6,23,0.5)}
+.lightbox-close{position:absolute;top:-12px;right:-12px;background:#fff;border-radius:50%;border:none;padding:6px 10px;cursor:pointer;font-weight:700}
+
+/* Skill bars */
+.skill{background:rgba(11,63,130,0.06);border-radius:999px;overflow:hidden;height:14px}
+.skill > .level{height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--accent));transition:width 1.2s cubic-bezier(.2,.9,.3,1)}
+.skill-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;color:var(--muted)}
+
+
+#portfolio-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin: 40px auto; /* Center the entire section */
     text-align: center;
+    width: 90%; /* Ensure consistent width across devices */
+    max-width: 1200px; /* Prevent excessive width */
+}
+
+
+#portfolio-download img {
+    margin-bottom: 10px; /* Space between the thumbnail and text */
+}
+
+/* Project Sections */
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+/* Two-column project layout: text + image side-by-side */
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.project .project-content-left, .project .project-content-right, .project .project-content {
+    flex: 1 1 600px; /* wider flex-basis to reduce wrapping */
+    min-width: 0; /* allow flex children to shrink properly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
+}
+
+/* Exception for specific large text sections that need more width */
+.project .wide-content,
+.project > .card > .wide-content {
+    flex: 1 1 700px; /* give more room for MASA and CubeSat text */
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
+}
+
+/* Dropdown expands full-width below the content */
+.project .dropdown-content {
+    flex: 1 0 100%;
+    order: 2;
+    margin-right: 0;
+}
+
+/* Increase the card max-width inside the projects container so wide-content has real room
+   (the default .card max-width of 1100px was constraining the columns) */
+.projects .project > .card {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Allow wide-content to take even more space before wrapping */
+.project .wide-content,
+.project > .card > .wide-content {
+    flex: 1 1 700px;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
+}
+
+/* Ensure images shrink gracefully when container is narrower */
+.projects .project img { max-width: 100%; height: auto; }
+.project .project-image-left, .project .project-image-right, .project .project-image {
+    flex: 0 0 360px; /* slightly smaller image column to give text more room */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Handle case where script.js wraps section children into a .card: make the .card the flex container */
+.project > .card > .project-content-left,
+.project > .card > .project-content-right,
+.project > .card > .project-content {
+    flex: 1 1 600px;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-right: 28px;
+}
+.project > .card > .project-image-left,
+.project > .card > .project-image-right,
+.project > .card > .project-image {
+    flex: 0 0 360px;
+}
+
+/* Dropdown in card also expands full-width below */
+.project > .card > .dropdown-content {
+    flex: 1 0 100%;
+    order: 2;
+    margin-right: 0;
+}
+.project img { max-width: 100%; border-radius: 10px; box-shadow: 0 12px 36px rgba(2,6,23,0.12); }
+
+/* Ensure consistent ordering: text then image for readability */
+.project .project-content-left { order: 0; display: flex; flex-direction: column; }
+.project .project-image-right, .project .project-image { order: 1; }
+.project .project-content-right { order: 0; display: flex; flex-direction: column; }
+.project .project-image-left { order: 1; }
+
+@media (max-width: 900px){
+    .project { flex-direction: column; align-items: stretch; }
+    .project .project-image-left, .project .project-image-right, .project .project-image { order: 0; flex: none; width: 100%; }
+    .project .project-content-left, .project .project-content-right, .project .project-content { width: 100%; order: initial; }
+}
+
+/* Alternate image/text order for each project for a cleaner zig-zag layout
+   Use the .projects container so nth-child counts only project entries */
+.projects .project:nth-child(odd) .project-image,
+.projects .project:nth-child(odd) .project-image-left,
+.projects .project:nth-child(odd) .project-image-right {
+    order: 1;
+}
+.projects .project:nth-child(odd) .project-content,
+.projects .project:nth-child(odd) .project-content-left,
+.projects .project:nth-child(odd) .project-content-right {
+    order: 0;
+}
+.projects .project:nth-child(even) .project-image,
+.projects .project:nth-child(even) .project-image-left,
+.projects .project:nth-child(even) .project-image-right {
+    order: 0;
+}
+.projects .project:nth-child(even) .project-content,
+.projects .project:nth-child(even) .project-content-left,
+.projects .project:nth-child(even) .project-content-right {
+    order: 1;
+}
+
+/* Tighten spacing and ensure readable columns */
+.project{padding:48px 0;margin-bottom:3.5rem}
+.project .project-content-left, .project .project-content-right, .project .project-content{padding:6px 18px}
+.project .project-image-left img, .project .project-image-right img, .project .project-image img{max-height:420px;object-fit:cover}
+
+@media (max-width:900px){
+    .project{padding:28px 0}
+    .project .project-image-left img, .project .project-image-right img, .project .project-image img{max-height:none}
+}
+
+/* Scroll snap for smooth section navigation */
+html, body {
+    height: 100%;
+}
+
+body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    overflow-y: auto;
+}
+
+/* Elements that should align at snap points */
+.snap, header, section {
+    scroll-snap-align: start;
+}
+
+/* Make hero fill viewport for strong visual impact */
+.snap-full{min-height:100vh}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;will-change:transform,opacity}
+.reveal.in-view{opacity:1;transform:none}
+
+/* When navigating via topnav, exaggerate the fade-in for a more dramatic effect */
+.nav-clicked .reveal{transition-duration:1.2s !important;transition-timing-function:cubic-bezier(.22,.9,.24,1) !important}
+
+/* Parallax helper for background-position changes */
+[data-parallax]{background-attachment:scroll;background-position:center center;transition:background-position 0.1s linear}
+
+/* Slight spacing when a section is visually full-screen */
+.snap-full .hero-content{padding-top:12px}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+    header{height:620px}
+    .hero-content h1{font-size:32px}
+    .hero-subtitle{font-size:15px}
+    #about .card{flex-direction:column;gap:16px}
+    .topnav{left:16px;transform:none}
+}
+
+.project-image-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-.thumbnail-container {
+.project-content-right,
+.project-content-left {
+    flex: 1;
+    min-width: 300px; /* Prevents collapsing */
+    padding: 1rem;
+}
+
+.project-image-right {
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    min-width: 300px; /* Prevents collapsing */
+    text-align: center; /* Optional: Center the image */
+    padding: 1rem;
 }
 
-.thumbnail {
-    display: block;
-    text-decoration: none;
-    color: black;
-    border: 1px solid #ddd;
+.project-image img {
+    max-width: 100%;
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image, .project-content {
+        padding: 10px;
+    }
+    section {
+        width: 95%; /* Use more of the screen */
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 10px; /* Minimize side padding */
+    }
+}
+
+/* Dropdown content initially hidden */
+
+/* Dropdown reveal content (animated) */
+.dropdown-content {
+    margin-top: 24px;
+    padding: 0; /* will be set to 20px when expanded */
+    background-color: rgba(255,255,255,0.98);
+    color: #111;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+    max-height: 0;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.thumbnail img {
-    display: block;
+    transition: max-height 0.45s cubic-bezier(.2,.9,.3,1), opacity 0.35s ease, padding 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Expanded state */
+.dropdown-content.expanded {
+    max-height: 3000px;
+    padding: 20px;
+    opacity: 1;
+}
+
+/* Button for toggling dropdown */
+.dropdown-toggle {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #004c99;
+}
+
+/* Make expanded dropdowns readable */
+.dropdown-content p {
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.dropdown-content h3 {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #0b3f9a;
+}
+
+.dropdown-content h3:first-child {
+    margin-top: 0;
+}
+
+.dropdown-content img {
+    width: 100%;
+    max-width: 600px;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
 }
 
-.thumbnail p {
-    margin: 10px;
-    font-weight: bold;
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column; /* Stacks content vertically */
+    }
+
+    .project-image-right {
+        margin-top: 1rem; /* Adds space between content and image */
+    }
 }
 
-.thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+/* ------- Professional micro-animations ------- */
+
+/* Shrinked navbar on scroll */
+.topnav.shrink{top:12px;padding:6px 10px;backdrop-filter: blur(6px);-webkit-backdrop-filter: blur(6px);background:rgba(6,10,20,0.12);border-radius:12px;transition:all .28s ease}
+
+/* Staggered hero text animation & utilities */
+.hero-content h1, .hero-subtitle, .hero-ctas{opacity:0;transform:translateY(18px) scale(.995);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.3,1)}
+.in-view .hero-content h1, .in-view .hero-subtitle, .in-view .hero-ctas{opacity:1;transform:none}
+.hero-content [data-stagger]{opacity:0;transform:translateY(10px);transition:opacity .6s ease, transform .6s ease}
+.in-view [data-stagger]{opacity:1;transform:none}
+
+/* subtle CTA pulse on entry */
+.btn-primary.pulse{animation:pulse 2.6s cubic-bezier(.2,.9,.3,1) 1}
+@keyframes pulse{0%{transform:scale(1);box-shadow:0 8px 20px rgba(11,99,206,0.12)}50%{transform:scale(1.03);box-shadow:0 22px 50px rgba(11,99,206,0.18)}100%{transform:scale(1);box-shadow:0 8px 20px rgba(11,99,206,0.12)}}
+
+/* heading underline hover style */
+h2{position:relative}
+h2::after{content:'';position:absolute;left:0;bottom:-8px;height:3px;width:36px;background:linear-gradient(90deg,var(--brand),var(--accent-2));border-radius:3px;transform:scaleX(0);transform-origin:left center;transition:transform .32s cubic-bezier(.2,.9,.3,1)}
+h2:hover::after{transform:scaleX(1)}
+
+/* simple fade-up utility */
+.fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+.in-view .fade-up{opacity:1;transform:none}
+
+/* parallax layer helper (for elements with data-parallax-layer) */
+[data-parallax-layer]{will-change:transform}
+
+/* nav link active state */
+.topnav ul li a.active{background:linear-gradient(90deg,var(--brand),var(--accent-2));color:#fff}
+
