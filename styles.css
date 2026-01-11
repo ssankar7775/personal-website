@@ -118,6 +118,14 @@ header{
     margin-bottom:18px;
 }
 
+/* Hero call-to-action buttons */
+.hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Navigation bar */
 /* Top navigation inside header */
 .topnav{
@@ -749,12 +757,257 @@ body {
     .topnav{left:16px;transform:none}
 }
 
-.project-image-left {
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    /* General mobile improvements */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Navigation improvements */
+    .topnav {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 15px 20px;
+        background: rgba(6,10,20,0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .topnav .logo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .topnav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .topnav ul li a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    /* Hero content mobile optimization */
+    .hero-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Section improvements */
+    section {
+        padding: 40px 0;
+        margin: 20px 0;
+    }
+
+    .card {
+        margin: 0 15px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    /* Project section mobile layout */
+    .project {
+        padding: 30px 0;
+        margin-bottom: 2rem;
+    }
+
+    .project .project-content-left,
+    .project .project-content-right,
+    .project .project-content {
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    .project .project-content-left h2,
+    .project .project-content-right h2,
+    .project .project-content h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .project .project-content-left h3,
+    .project .project-content-right h3,
+    .project .project-content h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .project .project-content-left p,
+    .project .project-content-right p,
+    .project .project-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    /* Image improvements for mobile */
+    .project .project-image-left,
+    .project .project-image-right,
+    .project .project-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 20px auto;
+        padding: 0;
+    }
+
+    .project .project-image-left img,
+    .project .project-image-right img,
+    .project .project-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* Dropdown button mobile styling */
+    .dropdown-toggle {
+        width: 100%;
+        max-width: 200px;
+        margin: 15px auto 0 auto;
+        display: block;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+
+    /* Dropdown content mobile improvements */
+    .dropdown-content {
+        padding: 15px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .dropdown-content h3 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dropdown-content h3:first-child {
+        margin-top: 0;
+    }
+
+    .dropdown-content p {
+        margin-bottom: 12px;
+    }
+
+    .dropdown-content img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 15px auto;
+        border-radius: 6px;
+    }
+
+    /* Thumbnail improvements */
+    .thumbnail-container {
+        padding: 0 15px;
+    }
+
+    .thumbnail {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .thumbnail img {
+        height: 200px;
+    }
+
+    .thumbnail p {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Back to top button mobile positioning */
+    #back-to-top {
+        right: 15px;
+        bottom: 15px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+        height: 3px;
+    }
+
+    /* Footer and contact form */
+    form {
+        padding: 0 15px;
+    }
+
+    input, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+
+    /* Button improvements */
+    .btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    /* Hero CTA buttons mobile */
+    .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .card {
+        margin: 0 10px;
+        padding: 15px;
+    }
+
+    .project .project-content-left h2,
+    .project .project-content-right h2,
+    .project .project-content h2 {
+        font-size: 20px;
+    }
+
+    .dropdown-content {
+        padding: 12px;
+    }
+
+    .dropdown-content h3 {
+        font-size: 16px;
+    }
+}
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    align-self: center;
 }
 
 .project-content-right,
@@ -772,30 +1025,12 @@ body {
     min-width: 300px; /* Prevents collapsing */
     text-align: center; /* Optional: Center the image */
     padding: 1rem;
+    align-self: center;
 }
 
 .project-image img {
     max-width: 100%;
     border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .project {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .project-image, .project-content {
-        padding: 10px;
-    }
-    section {
-        width: 95%; /* Use more of the screen */
-        padding: 10px;
-    }
-
-    .container {
-        padding: 0 10px; /* Minimize side padding */
-    }
 }
 
 /* Dropdown content initially hidden */
@@ -871,17 +1106,6 @@ body {
     border-radius: 8px;
     display: block;
     object-fit: cover;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .project {
-        flex-direction: column; /* Stacks content vertically */
-    }
-
-    .project-image-right {
-        margin-top: 1rem; /* Adds space between content and image */
-    }
 }
 
 /* ------- Professional micro-animations ------- */
