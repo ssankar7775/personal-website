@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-root = Path('.')
+root = Path('website')
 html_files = ['index.html','about.html','portfolio.html','contact.html']
 errors = []
 
@@ -69,6 +69,14 @@ if not (root / 'script.js').exists():
 # Quick sanity on script.js (non-empty)
 if (root / 'script.js').exists() and (root / 'script.js').stat().st_size < 200:
     errors.append('script.js looks unusually small')
+
+# Check PDF documents in their dedicated folders
+resume_dir = Path('resume')
+portfolio_dir = Path('portfolio')
+if not any(resume_dir.glob('*.pdf')):
+    errors.append('Missing: resume PDF in resume/')
+if not any(portfolio_dir.glob('*.pdf')):
+    errors.append('Missing: portfolio PDF in portfolio/')
 
 # Integration-like checks (site-wide)
 all_text = ''.join([read(n) or '' for n in html_files])
