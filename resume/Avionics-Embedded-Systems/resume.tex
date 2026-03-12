@@ -1,6 +1,6 @@
 \documentclass[10pt]{article}
 
-\usepackage[margin=0.38in]{geometry}
+\usepackage[margin=0.33in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -18,16 +18,16 @@
 % Section formatting (ATS-safe, single-column, no graphics)
 \setlength{\parskip}{0pt}
 \newcommand{\ressection}[1]{
-  \vspace{0.25em}
+  \vspace{0.12em}
   {\large\bfseries #1}\par
-  \vspace{0.08em}\hrule\vspace{0.20em}
+  \vspace{0.05em}\hrule\vspace{0.12em}
 }
 
 % Compact bullet layout for one-page engineering resumes
 \setlist[itemize]{
-  leftmargin=1.2em,
-  itemsep=0pt,
-  topsep=0pt,
+  leftmargin=1.1em,
+  itemsep=-1pt,
+  topsep=-1pt,
   parsep=0pt,
   partopsep=0pt,
   noitemsep
@@ -37,6 +37,7 @@
 
 \begin{center}
 {\LARGE {\bfseries Santhosh Sankar}} \\
+{\small Aerospace Engineer with expertise in avionics and embedded systems} \\
 Ann Arbor, MI \enspace $\vert$ \enspace (734) 846-5255 \enspace $\vert$ \enspace
 \href{mailto:ssankar@umich.edu}{ssankar@umich.edu} \enspace $\vert$ \enspace
 \href{https://www.linkedin.com/in/santhosh-sankar-3241521b8/}{linkedin.com/in/Tosh-Sankar} \enspace $\vert$ \enspace
@@ -55,14 +56,12 @@ Climate and Space Sciences and Engineering Department (CLaSP)
 \end{itemize}
 
 {\bfseries University of Michigan}, Ann Arbor, MI \hfill Aug 2021 -- Aug 2024 \\
-Bachelor of Science and Engineering in Aerospace Engineering \\
-Department of Aerospace Engineering
-
+Bachelor of Science and Engineering in Aerospace Engineering
 
 \ressection{WORK EXPERIENCE}
 
-{\bfseries SpaceX}, Graduate Engineer -- Payload Integration, Launch Engineering \hfill Aug 2025 -- Dec 2025 \\
-Vandenberg, CA
+{\bfseries SpaceX} -- Payload Integration, Launch Engineering \hfill Vandenberg, CA \\
+Graduate Engineer \hfill Aug 2025 -- Dec 2025
 \begin{itemize}
 \item Engineered an additional payload avionics checkout rack, increasing payload processing throughput by 50\% to support increased launch cadence.
 \item Developed a simulation environment to validate automated payload avionics checkout sequences, enabling hardware-independent testing and engineer training.
@@ -72,9 +71,8 @@ Vandenberg, CA
 
 \ressection{PROJECT EXPERIENCE}
 
-\textbf{Michigan Experimental Rocketry Organization (MERO)} \hfill Ann Arbor, MI \\
-\textit{Avionics Systems Engineer / Responsible Engineer} \hfill Jan 2025 – Present
-
+{\bfseries Michigan Experimental Rocketry Organization (MERO)} \hfill Ann Arbor, MI \\
+Avionics Systems Engineer / Responsible Engineer \hfill Jan 2025 -- Present
 \begin{itemize}
 \item Architecting integrated rocket avionics for flight computer, power distribution, and sensor/actuator interfaces with subsystem-level requirements traceability.
 \item Designing custom PCBs for flight computer, power, and I/O breakout hardware supporting guidance, telemetry, and recovery functions.
@@ -83,30 +81,36 @@ Vandenberg, CA
 \item Architecting LoRa-based flight--ground communication software for command uplink, telemetry downlink, and ground-station monitoring.
 \end{itemize}
 
-{\bfseries CubeSat Flight Lab -- University of Michigan}, Systems Engineer \hfill Aug 2023 -- Aug 2024 \\
-Ann Arbor, MI
+{\bfseries CubeSat Flight Lab -- University of Michigan} \hfill Ann Arbor, MI \\
+Systems Engineer \hfill Aug 2023 -- Aug 2024
 \begin{itemize}
   \item Spearheaded a high-altitude balloon (HAB) flight campaign for a research CubeSat; authored CONOPS, requirements, and integration/test procedures.
   \item Built {\bfseries 6} FlatSat/StratoSat iterations, reducing architecture from 3U 7 kg to 1U 1.2 kg and maturing subsystem integration.
   \item Designed an RP2040-based flight termination unit, reducing subsystem mass by 83\%; validated operation in thermal chamber testing to {\bfseries 110,000 ft altitude}.
-  \item Engineered embedded avionics integrating LoRa and GPS; mitigated GPS noise via ground-plane integration for robust command, tracking, and mission safety.
+  \item Engineered embedded avionics integrating LoRa and GPS; mitigated GPS RF noise via ground-plane integration for robust command, tracking, and mission safety.
 \end{itemize}
 
-{\bfseries Michigan Aeronautical Science Association (MASA)}, Aerodynamics and Recovery Sub-Team Lead \hfill Apr 2022 -- Apr 2023 \\
-Ann Arbor, MI
+{\bfseries Michigan Aeronautical Science Association (MASA)} \hfill Ann Arbor, MI \\
+Aerodynamics and Recovery Sub-Team Lead \hfill Apr 2022 -- Apr 2023
 \begin{itemize}
   \item Led aerodynamic and recovery system development for 23 ft. collegiate liquid bi-propellant (RP-1/LOx) rocket Clementine.
-  \item Implemented MBSE workflows for the Lonely Mission demonstrator, introducing Rolleron-based R\&D to mitigate roll coupling and improve verification flow.
+  \item Implemented MBSE workflows for the Lonely Mission demonstrator, introducing Rolleron-based stabilization research to mitigate roll coupling and improve flight verification.
   \item Engineered a transition from pyrotechnic to pneumatic deployment architecture, lowering fracture risk in fiberglass airframes and improving system reliability.
   \item Optimized fin and fin-can geometry using MATLAB (Mastran), FEA, OpenRocket, and CFD; led manufacturing execution including fabrication and composite layups.
 \end{itemize}
 
+{\bfseries Human Powered Submarine} \hfill Ann Arbor, MI \\
+Propulsion and Hull Design Team Member \hfill Sep 2023 -- Aug 2024
+\begin{itemize}
+  \item Migrated team CAD workflow to Siemens NX and Teamcenter, enabling large-assembly collaboration and standardizing GD\&T practices across the design team.
+  \item Designed a drivetrain tensioner system for gear-and-pulley propulsion, eliminating chain skipping and enabling diver-accessible adjustment during underwater operation.
+\end{itemize}
 
 \ressection{TECHNICAL SKILLS}
 
 \textbf{Programming:} Python, C/C++, MATLAB, Simulink \\
 \textbf{Embedded Systems:} Microcontrollers (RP2040), Raspberry Pi, embedded firmware, sensor interfaces, telemetry \\
-\textbf{Avionics \& Instrumentation:} Oscilloscopes, multimeters, DC supplies, thermal chambers, wind tunnels, spectrum analyzers, Logic Analyzers \\
+\textbf{Avionics \& Instrumentation:} Oscilloscopes, multimeters, thermal chambers, wind tunnels, spectrum analyzers, Logic Analyzers \\
 \textbf{Simulation \& Engineering Tools:} Siemens NX, SolidWorks, Star-CCM+, MATLAB, CFD, FEA, Altium Designer \\
 \textbf{Hardware Development:} PCB design, wiring harnesses, composite fabrication, aerospace prototyping \\
 \textbf{Project Management:} Requirements, test planning, technical documentation, team leadership
