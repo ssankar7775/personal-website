@@ -1,0 +1,112 @@
+% Resume focus: Mechanical
+% Tailor bullets toward structures, aerodynamics, manufacturing, CAD,
+% analysis, test, and hardware build ownership.
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.38in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\usepackage[none]{hyphenat}
+\sloppy
+
+\hypersetup{hidelinks}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\setlength{\parskip}{0pt}
+\newcommand{\ressection}[1]{
+  \vspace{0.25em}
+  {\large\bfseries #1}\par
+  \vspace{0.08em}\hrule\vspace{0.20em}
+}
+
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=0pt,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt,
+  noitemsep
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE {\bfseries Santhosh Sankar}} \\
+Ann Arbor, MI \enspace $\vert$ \enspace (734) 846-5255 \enspace $\vert$ \enspace
+\href{mailto:ssankar@umich.edu}{ssankar@umich.edu} \enspace $\vert$ \enspace
+\href{https://www.linkedin.com/in/santhosh-sankar-3241521b8/}{linkedin.com/in/Tosh-Sankar} \enspace $\vert$ \enspace
+\href{https://github.com/ssankar7775}{github.com/ssankar7775}
+\end{center}
+
+\ressection{EDUCATION}
+
+{\bfseries University of Michigan}, Ann Arbor, MI \hfill Jan 2026 -- May 2027 (Expected) \\
+Master of Engineering in Space Systems \hfill {\bfseries GPA: 4.0/4.0} \\
+Climate and Space Sciences and Engineering Department (CLaSP)
+
+\begin{itemize}
+  \item Specialization in Controls and Embedded Systems
+  \item Relevant Graduate Coursework: Management of Space Systems, Control System Analysis and Design, Astrodynamics
+\end{itemize}
+
+{\bfseries University of Michigan}, Ann Arbor, MI \hfill Aug 2021 -- Aug 2024 \\
+Bachelor of Science and Engineering in Aerospace Engineering \\
+Department of Aerospace Engineering
+
+\ressection{WORK EXPERIENCE}
+
+{\bfseries SpaceX}, Graduate Engineer -- Payload Integration, Launch Engineering \hfill Aug 2025 -- Dec 2025 \\
+Vandenberg, CA
+\begin{itemize}
+\item Engineered an additional payload avionics checkout rack, increasing payload processing throughput by 50\% to support increased launch cadence.
+\item Developed a simulation environment to validate automated payload avionics checkout sequences, enabling hardware-independent testing and engineer training.
+\item Automated payload checkout test plans, reducing required engineering support by 1 hour per launch campaign.
+\item Integrated payload avionics hardware supporting Falcon 9 launch processing operations.
+\end{itemize}
+
+\ressection{PROJECT EXPERIENCE}
+
+\textbf{Michigan Experimental Rocketry Organization (MERO)} \hfill Ann Arbor, MI \\
+\textit{Avionics Systems Engineer / Responsible Engineer} \hfill Jan 2025 – Present
+
+\begin{itemize}
+\item Architecting integrated rocket avionics for flight computer, power distribution, and sensor/actuator interfaces with subsystem-level requirements traceability.
+\item Designing custom PCBs for flight computer, power, and I/O breakout hardware supporting guidance, telemetry, and recovery functions.
+\item Developing embedded firmware for deterministic sensor acquisition, actuator control, and real-time telemetry handling.
+\item Designing and validating vehicle wiring harnesses and end-to-end electrical integration for flight hardware.
+\item Architecting LoRa-based flight--ground communication software for command uplink, telemetry downlink, and ground-station monitoring.
+\end{itemize}
+
+{\bfseries CubeSat Flight Lab -- University of Michigan}, Systems Engineer \hfill Aug 2023 -- Aug 2024 \\
+Ann Arbor, MI
+\begin{itemize}
+  \item Spearheaded a high-altitude balloon (HAB) flight campaign for a research CubeSat; authored CONOPS, requirements, and integration/test procedures.
+  \item Built {\bfseries 6} FlatSat/StratoSat iterations, reducing architecture from 3U 7 kg to 1U 1.2 kg and maturing subsystem integration.
+  \item Designed an RP2040-based flight termination unit, reducing subsystem mass by 83\%; validated operation in thermal chamber testing to {\bfseries 110,000 ft altitude}.
+  \item Engineered embedded avionics integrating LoRa and GPS; mitigated GPS noise via ground-plane integration for robust command, tracking, and mission safety.
+\end{itemize}
+
+{\bfseries Michigan Aeronautical Science Association (MASA)}, Aerodynamics and Recovery Sub-Team Lead \hfill Apr 2022 -- Apr 2023 \\
+Ann Arbor, MI
+\begin{itemize}
+  \item Led aerodynamic and recovery system development for 23 ft. collegiate liquid bi-propellant (RP-1/LOx) rocket Clementine.
+  \item Implemented MBSE workflows for the Lonely Mission demonstrator, introducing Rolleron-based R\&D to mitigate roll coupling and improve verification flow.
+  \item Engineered a transition from pyrotechnic to pneumatic deployment architecture, lowering fracture risk in fiberglass airframes and improving system reliability.
+  \item Optimized fin and fin-can geometry using MATLAB (Mastran), FEA, OpenRocket, and CFD; led manufacturing execution including fabrication and composite layups.
+\end{itemize}
+
+\ressection{TECHNICAL SKILLS}
+
+\textbf{Mechanical Design:} Siemens NX, SolidWorks, CAD modeling, tolerance-aware design \\
+\textbf{Analysis:} CFD, FEA, MATLAB, Simulink, OpenRocket \\
+\textbf{Manufacturing:} Composite fabrication, prototyping, integration, hardware build execution \\
+	extbf{Test \& Validation:} Thermal chambers, wind tunnels, instrumentation, verification planning \\
+\textbf{Programming:} Python, C/C++, MATLAB \\
+\textbf{Project Management:} Requirements, test planning, technical documentation, team leadership
+\end{document}
