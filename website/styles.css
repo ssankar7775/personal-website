@@ -1109,6 +1109,28 @@ body {
     object-fit: cover;
 }
 
+.projects .project .project-content-left p,
+.projects .project .project-content-right p,
+.projects .project .project-content p,
+.projects .project .dropdown-content p {
+    margin-bottom: 1.1em;
+    text-indent: 1.5em;
+}
+
+.projects .project .project-content-left p:first-of-type,
+.projects .project .project-content-right p:first-of-type,
+.projects .project .project-content p:first-of-type,
+.projects .project .dropdown-content p:first-of-type {
+    text-indent: 0;
+}
+
+.projects .project .project-content-left p + p,
+.projects .project .project-content-right p + p,
+.projects .project .project-content p + p,
+.projects .project .dropdown-content p + p {
+    margin-top: 0.35em;
+}
+
 /* ------- Professional micro-animations ------- */
 
 /* Shrinked navbar on scroll */
